@@ -20,6 +20,62 @@ internal fun getFake(context: Context, uri: Uri, response: Response.Builder): Re
             )
         }
 
+        "/api/dishes/sushi"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.sushiMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.sushiMenuAsset)
+            )
+        }
+
+        "/api/dishes/rolls"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.rollsMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.rollsMenuAsset)
+            )
+        }
+
+        "/api/dishes/hot_rolls"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.hotRollsMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.hotRollsMenuAsset)
+            )
+        }
+
+        "/api/dishes/snacks"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.snacksMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.snacksMenuAsset)
+            )
+        }
+
+        "/api/dishes/wok"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.wokMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.wokMenuAsset)
+            )
+        }
+
+        "/api/dishes/soups"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.soupsMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.soupsMenuAsset)
+            )
+        }
+
+        "/api/dishes/drinks"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.drinksMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.drinksMenuAsset)
+            )
+        }
+
+        "/api/dishes/additionally"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(DishesMenuAsset.additionallyMenuAsset),
+                body = context.readFileFromAssets(DishesMenuAsset.additionallyMenuAsset)
+            )
+        }
+
         else                                     -> {
             error404(response)
         }

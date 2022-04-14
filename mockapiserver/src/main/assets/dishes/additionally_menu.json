@@ -1,0 +1,29 @@
+[
+  {
+    "id": 123,
+    "category": "ADDITIONALLY",
+    "name": "Соевый соус",
+    "composition": "Соевый соус средней солёности",
+    "price": 30,
+    "weight": 50,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 124,
+    "category": "ADDITIONALLY",
+    "name": "Васаби",
+    "composition": "Классическая японская добавка с сильным вкусом и ароматом",
+    "price": 30,
+    "weight": 50,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 125,
+    "category": "ADDITIONALLY",
+    "name": "Имбирь",
+    "composition": "Маринованный имбирь",
+    "price": 30,
+    "weight": 50,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]

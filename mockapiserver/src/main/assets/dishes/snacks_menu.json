@@ -1,0 +1,29 @@
+[
+  {
+    "id": 81,
+    "category": "SNACK",
+    "name": "Картофель фри",
+    "composition": "Картофель фри с солью + 1 сырный соус в подарок",
+    "price": 175,
+    "weight": 170,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 82,
+    "category": "SNACK",
+    "name": "Цезарь с креветками",
+    "composition": "Классический Цезарь с тигровыми креветками вместо курицы для ценителей",
+    "price": 398,
+    "weight": 250,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 83,
+    "category": "SNACK",
+    "name": "Салат чука",
+    "composition": "Два вида водорослей и яркий освежающий лёгкий вкус с выраженными ореховыми нотами",
+    "price": 280,
+    "weight": 140,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]

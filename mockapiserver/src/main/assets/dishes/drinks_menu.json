@@ -1,0 +1,20 @@
+[
+  {
+    "id": 12,
+    "category": "DRINK",
+    "name": "Морс клюквенный",
+    "composition": "Натуральный морс холодного отжима из клюквы. ",
+    "price": 75,
+    "weight": 500,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 13,
+    "category": "DRINK",
+    "name": "Морс брусничный",
+    "composition": "Натуральный морс холодного отжима из брусники. ",
+    "price": 125,
+    "weight": 500,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]

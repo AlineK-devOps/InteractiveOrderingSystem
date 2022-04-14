@@ -1,0 +1,29 @@
+[
+  {
+    "id": 89,
+    "category": "SUSHI",
+    "name": "Суши с лососем",
+    "composition": "Классический суши с лососем",
+    "price": 175,
+    "weight": 55,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 90,
+    "category": "SUSHI",
+    "name": "Суши с угрем",
+    "composition": "Классический суши с угрем и соусом унаги",
+    "price": 270,
+    "weight": 55,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 91,
+    "category": "SUSHI",
+    "name": "Гункан с крабом",
+    "composition": "Гункан с крабом и спайси соусом",
+    "price": 80,
+    "weight": 65,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]

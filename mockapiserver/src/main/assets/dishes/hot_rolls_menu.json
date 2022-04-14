@@ -1,0 +1,29 @@
+[
+  {
+    "id": 18,
+    "category": "HOT_ROLL",
+    "name": "Цыпленок темпура",
+    "composition": "Свежеобжаренный цыплёнок, болгарский перец, ананас и кисло-сладкий соус, обжарены в кляре до хрустящей корочки",
+    "price": 180,
+    "weight": 250,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 19,
+    "category": "HOT_ROLL",
+    "name": "Чикен чили",
+    "composition": "Хрустящая и обжаренная тонкая пшеничная тортилья, в которой курочка, сладкий перец и сливочным сыр, - и всё это щедро полито немного сладковатым соусом чили с слегка заметной остринкой",
+    "price": 220,
+    "weight": 210,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 20,
+    "category": "HOT_ROLL",
+    "name": "Креветто запеченный",
+    "composition": "Тигровая креветка в сыре моцарелла, поджаренная в гриле и политая сладковатым соусом Унаги. Внутри - огурец в сливочном сыре с соусом Спайси",
+    "price": 295,
+    "weight": 280,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]

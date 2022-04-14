@@ -1,0 +1,20 @@
+[
+  {
+    "id": 76,
+    "category": "SOUP",
+    "name": "Том ям",
+    "composition": "Знаменитый тайский питательный суп с королевскими креветками, курицей, грибами с заправкой из лемонграсса, соевого масла, лука-шалот, тамаринда, красного перца, чеснока, анчоусного соуса и креветочного порошка",
+    "price": 330,
+    "weight": 290,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 77,
+    "category": "SOUP",
+    "name": "Суп мисо",
+    "composition": "Традиционный японский лёгкий суп мисо с водорослями вакаме, кусочками тофу и грибами шиитаке",
+    "price": 220,
+    "weight": 280,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]

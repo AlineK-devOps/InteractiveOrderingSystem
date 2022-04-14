@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "category": "WOK",
+    "name": "Курица терияки",
+    "composition": "Самый популярный вок в нашем меню. Куриное филе с морковью и болгарским перцем в соусе терияки.",
+    "price": 237,
+    "weight": 300,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 2,
+    "category": "WOK",
+    "name": "Лосось терияки",
+    "composition": "Лосось с морковью и болгарским перцем в соусе терияки",
+    "price": 299,
+    "weight": 300,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  },
+  {
+    "id": 3,
+    "category": "WOK",
+    "name": "Креветки сладкий чили",
+    "composition": "Королевское сочетание тигровых креветок, обжаренных  в соусе сладкий чили с грибами шиитаке и морковью",
+    "price": 395,
+    "weight": 300,
+    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+  }
+]
