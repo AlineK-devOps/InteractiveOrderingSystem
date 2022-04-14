@@ -28,5 +28,4 @@ dependencies {
     implementation project(':component:ui')
 
     implementation project(':features:dishes:menu')
-    implementation project(':features:dishes:details')
 }
