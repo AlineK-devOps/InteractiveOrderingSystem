@@ -1,0 +1,24 @@
+buildscript {
+    apply from: 'build_system/dependencies.gradle'
+    apply from: 'build_system/versions.gradle'
+    apply from: 'build_system/plugins.gradle'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath Dependencies.GRADLE
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,10 @@
+include ':app'
+include ':mockapiserver'
+
+include ':component:resources'
+include ':component:ui'
+
+include ':features:dishes:menu'
+include ':features:dishes:details'
+
+rootProject.name = "Интерактивная система заказов"
