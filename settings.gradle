@@ -6,4 +6,6 @@ include ':component:ui'
 
 include ':features:dishes:menu'
 
+include ':shared:dishes'
+
 rootProject.name = "Интерактивная система заказов"
