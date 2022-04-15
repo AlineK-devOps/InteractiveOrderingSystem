@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<style name="Theme.PersonalCabinet"
+		parent="Theme.MaterialComponents.Light.NoActionBar">
+		<!-- Default background color. -->
+		<!-- Primary brand color. -->
+		<item name="colorPrimary">@color/red</item>
+		<item name="colorPrimaryVariant">@color/dark_red</item>
+		<item name="colorOnPrimary">@color/white</item>
+		<!-- Secondary brand color. -->
+		<item name="colorSecondary">@color/teal_200</item>
+		<item name="colorSecondaryVariant">@color/teal_700</item>
+		<item name="colorOnSecondary">@color/white</item>
+		<!-- Status bar color. -->
+		<item tools:targetApi="23"
+			name="android:statusBarColor">?attr/colorOnPrimary
+		</item>
+		<item tools:targetApi="23"
+			name="android:windowLightStatusBar">true
+		</item>
+		<!-- Customize your theme here. -->
+	</style>
+
+	<style name="Theme.PersonalCabinet.EnterButton"
+		parent="Widget.MaterialComponents.Button">
+		<item name="android:backgroundTint">@color/dark_gray_70</item>
+		<item name="android:textSize">@dimen/text_size_15</item>
+		<item name="android:textColorHint">@color/white</item>
+		<item name="cornerRadius">@dimen/radius_8</item>
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:paddingTop">@dimen/padding_16</item>
+		<item name="android:paddingBottom">@dimen/padding_16</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.HelpText">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textSize">@dimen/text_size_10</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:textColor">@color/dark_violet_75</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.LoginTextInput"
+		parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+		<item name="boxCornerRadiusBottomEnd">@dimen/radius_8</item>
+		<item name="boxCornerRadiusBottomStart">@dimen/radius_8</item>
+		<item name="boxCornerRadiusTopEnd">@dimen/radius_8</item>
+		<item name="boxCornerRadiusTopStart">@dimen/radius_8</item>
+		<item name="boxBackgroundColor">@color/login_input</item>
+		<item name="android:textColorHint">@color/hint_grey</item>
+		<item name="hintTextColor">@color/dark_gray_70</item>
+		<item name="boxStrokeWidth">0dp</item>
+		<item name="boxStrokeWidthFocused">0dp</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.LoginErrorText"
+		parent="TextAppearance.AppCompat.Body1">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="android:textColor">@color/main_red</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.LoginHintText"
+		parent="TextAppearance.AppCompat.Body1">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="android:textColorHint">@color/hint_grey</item>
+		<item name="android:textCursorDrawable">@drawable/cursor_color</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.AppBarText">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:textSize">@dimen/text_size_28</item>
+		<item name="android:textColor">@color/white</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ToolbarTitleText"
+		parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:textColor">@color/white</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.SimplyText">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textColor">@color/black</item>
+		<item name="android:textSize">@dimen/text_size_20</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ToolbarButtonBase"
+		parent="Widget.MaterialComponents.Button.TextButton">
+		<item name="iconGravity">textStart</item>
+		<item name="android:insetLeft">@dimen/inset_0</item>
+		<item name="android:insetTop">@dimen/inset_0</item>
+		<item name="android:insetRight">@dimen/inset_0</item>
+		<item name="android:insetBottom">@dimen/inset_0</item>
+		<item name="android:minWidth">@dimen/min_width_0</item>
+		<item name="android:padding">@dimen/padding_16</item>
+		<item name="iconPadding">@dimen/padding_0</item>
+		<item name="iconTint">@color/white</item>
+		<item name="rippleColor">@color/white</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ToolbarBackButton"
+		parent="Theme.PersonalCabinet.ToolbarButtonBase">
+		<item name="icon">@drawable/ic_arrow_back</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ToolbarHelpButton"
+		parent="Theme.PersonalCabinet.ToolbarButtonBase">
+		<item name="icon">@drawable/ic_help</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ToolbarEditButton"
+		parent="Theme.PersonalCabinet.ToolbarButtonBase">
+		<item name="icon">@drawable/ic_edit</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.PeriodCommentInput"
+		parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="boxStrokeColor">@color/dark_gray_70</item>
+		<item name="hintTextColor">@color/dark_gray_70</item>
+		<item name="counterMaxLength">200</item>
+		<item name="counterEnabled">true</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.QuantityInput"
+		parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="boxStrokeColor">@color/dark_gray_70</item>
+		<item name="hintTextColor">@color/dark_gray_70</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.BusinessTripNumber"
+		parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="boxStrokeColor">@color/dark_gray_70</item>
+		<item name="hintTextColor">@color/dark_gray_70</item>
+		<item name="counterMaxLength">15</item>
+		<item name="counterEnabled">true</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.PeriodAlternatesInput"
+		parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+		<item name="boxStrokeColor">@color/dark_gray_70</item>
+		<item name="hintTextColor">@color/dark_gray_70</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.Header">
+		<item name="android:textSize">@dimen/text_size_28</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/dark_gray_70</item>
+		<item name="android:textAllCaps">true</item>
+		<item name="fontStyle">normal</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.SignUpWarning"
+		parent="Theme.PersonalCabinet.HelpText">
+		<item name="android:textSize">@dimen/text_size_14</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.SignUpTextButton"
+		parent="Widget.MaterialComponents.Button.TextButton">
+		<item name="android:textSize">@dimen/text_size_20</item>
+		<item name="android:textColorHint">@color/white</item>
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:paddingTop">@dimen/padding_16</item>
+		<item name="android:paddingBottom">@dimen/padding_16</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.SignUpTextInput"
+		parent="Theme.PersonalCabinet.LoginTextInput">
+		<item name="errorIconDrawable">@null</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.Important_Info"
+		parent="Widget.MaterialComponents.TextView">
+		<item name="android:textColor">@color/red</item>
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:paddingTop">@dimen/padding_16</item>
+		<item name="android:paddingBottom">@dimen/padding_16</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ToolbarTitleLessText"
+		parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:textColor">@color/white</item>
+		<item name="android:textSize">@dimen/text_size_19</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.AddVacationText"
+		parent="Widget.AppCompat.TextView">
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/dark_gray_70</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ChipText"
+		parent="TextAppearance.MaterialComponents.Caption">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textSize">9sp</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.Chip"
+		parent="Widget.MaterialComponents.Chip.Entry">
+		<item name="android:textAppearance">@style/Theme.PersonalCabinet.ChipText</item>
+		<item name="chipIcon">@drawable/ic_twotone_account_circle_24</item>
+		<item name="chipIconTint">@color/dark_gray_70</item>
+		<item name="closeIconVisible">true</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.CalendarText"
+		parent="TextAppearance.AppCompat">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textSize">9sp</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.OperationResultHeader">
+		<item name="android:textSize">@dimen/text_size_23</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/dark_red</item>
+		<item name="android:textAllCaps">true</item>
+		<item name="fontStyle">normal</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.OperationResultText">
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/dark_gray_70</item>
+		<item name="android:textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.DescriptionText">
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/black</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.FAB"
+		parent="Widget.MaterialComponents.FloatingActionButton">
+		<item name="android:layout_gravity">bottom|end</item>
+		<item name="android:layout_margin">@dimen/margin_16</item>
+		<item name="backgroundTint">@color/red</item>
+		<item name="borderWidth">0dp</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.DropDownMenu"
+		parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+		<item name="boxStrokeColor">@color/dark_gray_70</item>
+		<item name="hintTextColor">@color/dark_gray_70</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.ImportantInformationTextView">
+		<item name="android:textColor">@color/dark_red</item>
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textAlignment">center</item>
+		<item name="fontFamily">@font/roboto_slab</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.InfoButton"
+		parent="Widget.MaterialComponents.Button.TextButton">
+		<item name="android:textSize">@dimen/text_size_20</item>
+		<item name="android:textColor">@color/dark_red</item>
+		<item name="rippleColor">@color/red</item>
+		<item name="android:insetLeft">@dimen/inset_0</item>
+		<item name="android:insetTop">@dimen/inset_0</item>
+		<item name="android:insetRight">@dimen/inset_0</item>
+		<item name="android:insetBottom">@dimen/inset_0</item>
+		<item name="android:minWidth">@dimen/min_width_0</item>
+		<item name="android:padding">@dimen/padding_16</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.CheckBox"
+		parent="Widget.AppCompat.CompoundButton.CheckBox">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/dark_gray_70</item>
+		<item name="fontStyle">normal</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.NotificationDialogHeader">
+		<item name="android:textSize">@dimen/text_size_23</item>
+		<item name="android:fontFamily">@font/roboto_slab</item>
+		<item name="android:textColor">@color/blue</item>
+		<item name="android:textAllCaps">true</item>
+		<item name="fontStyle">normal</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.SearchField">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="android:textSize">@dimen/text_size_14</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.CardViewTitle">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="android:textSize">@dimen/text_size_14</item>
+		<item name="android:textColor">@color/dark_gray_70</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.CardViewText">
+		<item name="fontFamily">@font/roboto_slab</item>
+		<item name="textAllCaps">false</item>
+		<item name="fontStyle">normal</item>
+		<item name="fontWeight">700</item>
+		<item name="android:textSize">@dimen/text_size_16</item>
+		<item name="android:textColor">@color/black</item>
+	</style>
+
+	<style name="Theme.PersonalCabinet.CardViewBackground"
+		parent="Widget.MaterialComponents.CardView">
+		<item name="cardBackgroundColor">@color/card_background</item>
+		<item name="cardCornerRadius">@dimen/radius_8</item>
+		<item name="android:layout_margin">@dimen/margin_8</item>
+		<item name="cardElevation">@dimen/elevation_2</item>
+	</style>
+</resources>
