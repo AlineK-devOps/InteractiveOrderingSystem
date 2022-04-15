@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/menu_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_85"
+        android:background="@color/white_gray"
+        android:elevation="@dimen/size_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/separator3"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toStartOf="@id/waiter_calling_button"/>
+
+            <Button
+                android:id="@+id/waiter_calling_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_person"
+                android:text="@string/waiter_calling_button_text"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/order_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:id="@+id/separator1"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/waiter_calling_button"
+                app:layout_constraintEnd_toStartOf="@id/order_button"/>
+
+            <Button
+                android:id="@+id/order_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_cart"
+                android:text="@string/order_button_text"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/bill_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:id="@+id/separator2"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/order_button"
+                app:layout_constraintEnd_toStartOf="@id/bill_button"/>
+
+            <Button
+                android:id="@+id/bill_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_bill"
+                android:text="@string/bill_button_text"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/orange"
+                android:paddingHorizontal="@dimen/padding_30"
+                android:paddingVertical="@dimen/padding_10"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    style="@style/Theme.InteractiveOrderingSystem.ToolbarTableNumberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/requests_from_warehouse_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/add_request_from_warehouse_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requests_from_warehouse_search_field"
+        tools:listitem="@layout/delivery_request_item" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/size_70"
+        android:layout_height="@dimen/size_70"
+        android:indeterminateTint="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
