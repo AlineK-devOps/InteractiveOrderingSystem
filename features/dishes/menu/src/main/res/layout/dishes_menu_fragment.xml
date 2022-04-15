@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/screen"
+    android:background="@color/light_gray"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -80,14 +81,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <LinearLayout
+                android:id="@+id/table_number_background"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/orange"
                 android:paddingHorizontal="@dimen/padding_30"
-                android:paddingVertical="@dimen/padding_10"
+                android:paddingVertical="@dimen/padding_20"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
+                    android:id="@+id/table_number"
                     style="@style/Theme.InteractiveOrderingSystem.ToolbarTableNumberText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -97,20 +100,56 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/requests_from_warehouse_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/add_request_from_warehouse_layout"
-        app:layout_constraintEnd_toEndOf="parent"
+    <LinearLayout
+        android:id="@+id/menu_tabs_background"
+        android:layout_width="@dimen/size_210"
+        android:layout_height="@dimen/size_0"
+        android:background="@color/blue_gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requests_from_warehouse_search_field"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar">
+
+        <ListView
+            android:id="@+id/menu_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_15"
+            android:entries="@array/category_name"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/category_name"
+        style="@style/Theme.InteractiveOrderingSystem.MenuTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stub"
+        android:padding="@dimen/padding_15"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar" />
+
+    <View
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_2"
+        android:background="@color/white_gray"
+        android:layout_marginEnd="@dimen/margin_15"
+        app:layout_constraintStart_toEndOf="@id/category_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/category_name"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dishes_list"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/category_name"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/delivery_request_item" />
 
     <ProgressBar
@@ -118,9 +157,9 @@
         android:layout_width="@dimen/size_70"
         android:layout_height="@dimen/size_70"
         android:indeterminateTint="@color/orange"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/category_name"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

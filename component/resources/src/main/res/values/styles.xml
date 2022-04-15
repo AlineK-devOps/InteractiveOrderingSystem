@@ -43,4 +43,14 @@
         <item name="android:paddingHorizontal">@dimen/padding_40</item>
     </style>
 
+    <style name="Theme.InteractiveOrderingSystem.MenuTitleText"
+        parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:fontFamily">@font/roboto_black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_35</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/dark_blue_gray</item>
+    </style>
+
 </resources>
