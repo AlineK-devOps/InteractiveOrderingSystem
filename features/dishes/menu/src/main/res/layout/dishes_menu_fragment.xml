@@ -149,8 +149,7 @@
         app:layout_constraintTop_toBottomOf="@id/category_name"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/delivery_request_item" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

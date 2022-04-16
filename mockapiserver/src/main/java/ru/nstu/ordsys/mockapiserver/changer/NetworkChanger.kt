@@ -3,9 +3,9 @@ package ru.nstu.ordsys.mockapiserver.changer
 import android.content.Context
 import android.util.Log
 import androidx.core.content.edit
-import org.koin.android.BuildConfig
 import org.koin.core.qualifier.named
 import org.koin.core.scope.Scope
+import ru.nstu.ordsys.mockapiserver.BuildConfig
 
 const val MOCK = "MOCK_SERVER"
 const val ORIGINAL = "ORIGINAL_SERVER"

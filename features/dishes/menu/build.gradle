@@ -21,4 +21,6 @@ dependencies {
 
     implementation project(':shared:dishes')
     implementation project(':component:resources')
+    implementation project(':component:ui')
+    implementation project(':mockapiserver')
 }
