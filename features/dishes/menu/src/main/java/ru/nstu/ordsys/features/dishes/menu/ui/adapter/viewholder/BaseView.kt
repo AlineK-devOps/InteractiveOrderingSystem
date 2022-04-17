@@ -1,4 +1,4 @@
-package ru.nstu.ordsys.features.dishes.menu.ui
+package ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle

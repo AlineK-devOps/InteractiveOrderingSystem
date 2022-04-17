@@ -1,10 +1,8 @@
 package ru.nstu.ordsys.navigation.router
 
 import com.github.terrakok.cicerone.Router
+import ru.nstu.ordsys.features.dishes.menu.presentation.DishesMenuRouter
 
-//class DishesListRouterImpl(private val router: Router) : DishesListRouter {
-//
-//    override fun openSignUp() {
-//        router.navigateTo(getSignUpScreen())
-//    }
-//}
+class DishesMenuRouterImpl(private val router: Router) : DishesMenuRouter {
+
+}

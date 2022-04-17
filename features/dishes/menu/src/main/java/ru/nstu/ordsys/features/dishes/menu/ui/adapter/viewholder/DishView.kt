@@ -1,4 +1,4 @@
-package ru.nstu.ordsys.features.dishes.menu.ui
+package ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ class DishView(
 ) : BaseView(parent.context) {
 
     init {
-        inflate(context, R.layout.dish_menu_item, this)
+        inflate(context, R.layout.dishes_menu_item, this)
     }
 
     private val binding = DishMenuItemBinding.bind(this)

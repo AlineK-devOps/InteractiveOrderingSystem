@@ -8,10 +8,14 @@ import android.widget.ArrayAdapter
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
 import ru.nstu.ordsys.features.dishes.menu.R
 import ru.nstu.ordsys.features.dishes.menu.databinding.DishesMenuFragmentBinding
-import ru.nstu.ordsys.features.dishes.menu.presentation.DishesMenuState
+import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesMenuState
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesMenuViewModel
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.nstu.ordsys.component.ui.animation.hideWithFade
+import ru.nstu.ordsys.component.ui.animation.showWithFade
+import ru.nstu.ordsys.component.ui.dialog.showCustomDialog
+import ru.nstu.ordsys.features.dishes.menu.ui.adapter.DishesMenuAdapter
 
 
 class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dishes_menu_fragment) {
@@ -32,83 +36,99 @@ class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dish
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bindAdapter()
+        binding.tableNumber.text = getString(R.string.table_number, 15)
+
+        bindAdapters()
         setListeners()
-        //setObservers()
+        setObservers()
     }
 
-    private fun bindAdapter() {
-        listAdapter = ArrayAdapter(
-            requireContext(),
-            R.layout.dishes_category_tab,
-            resources.getStringArray(R.array.category_name)
-        )
-        binding.menuTabs.adapter = listAdapter
+    private fun bindAdapters() {
+        with(binding){
 
-        binding.menuTabs.setOnItemClickListener { parent, itemClicked, position, id ->
-            val category = resources.getStringArray(R.array.category_name)[position]
+            listAdapter = ArrayAdapter(
+                requireContext(),
+                R.layout.dishes_category_tab,
+                resources.getStringArray(R.array.category_name)
+            )
+            menuTabs.adapter = listAdapter
 
-            when (category) {
-                "Роллы"            -> viewModel.getRollsMenu()
-                "Горячие роллы"    -> viewModel.getHotRollsMenu()
-                "Суши"             -> viewModel.getSushiMenu()
-                "Салаты и закуски" -> viewModel.getSnacksMenu()
-                "Вок"              -> viewModel.getWokMenu()
-                "Супы"             -> viewModel.getSoupsMenu()
-                "Напитки"          -> viewModel.getDrinksMenu()
-                "Дополнительно"    -> viewModel.getAdditionallyMenu()
+            menuTabs.setOnItemClickListener { _, _, position, _ ->
+                val category = resources.getStringArray(R.array.category_name)[position]
+
+                when (category) {
+                    "Роллы"            -> viewModel.getRollsMenu()
+                    "Горячие роллы"    -> viewModel.getHotRollsMenu()
+                    "Суши"             -> viewModel.getSushiMenu()
+                    "Салаты и закуски" -> viewModel.getSnacksMenu()
+                    "Вок"              -> viewModel.getWokMenu()
+                    "Супы"             -> viewModel.getSoupsMenu()
+                    "Напитки"          -> viewModel.getDrinksMenu()
+                    "Дополнительно"    -> viewModel.getAdditionallyMenu()
+                }
+
+                categoryName.text = category
             }
+
+            menuAdapter = DishesMenuAdapter()
+            dishesList.adapter = menuAdapter
+
+            viewModel.getRollsMenu()
         }
-
-        binding.menuTabs.setSelection(0)
-
-        menuAdapter = DishesMenuAdapter()
-        binding.dishesList.adapter = menuAdapter
     }
 
     private fun setListeners() {
-        binding.waiterCallingButton.setOnClickListener {
+        with(binding){
 
-        }
-        binding.orderButton.setOnClickListener {
+            waiterCallingButton.setOnClickListener {
 
-        }
-        binding.billButton.setOnClickListener {
+            }
+            orderButton.setOnClickListener {
 
+            }
+            billButton.setOnClickListener {
+
+            }
         }
     }
 
-//    private fun setObservers() {
-//        viewModel.state.observe(viewLifecycleOwner, ::handleState)
-//    }
+    private fun setObservers() {
+        viewModel.state.observe(viewLifecycleOwner, ::handleState)
+    }
 
     private fun handleState(state: DishesMenuState) {
         when (state) {
-            //is DishesMenuState.Initial,
-            //is DishesMenuState.Loading      -> renderLoadingState()
-            //is DishesMenuState.Error        -> renderErrorState()
+            is DishesMenuState.Initial,
+            is DishesMenuState.Loading      -> renderLoadingState()
+            is DishesMenuState.Error        -> renderErrorState()
             is DishesMenuState.Content      -> renderContentState(state.dishesMenu)
-            else -> Unit
         }
     }
 
-    //
-//    private fun renderLoadingState() {
-//        errorNoticeBinding?.root?.hideWithFade()
-//        binding.progressBar.showWithFade()
-//    }
-//
-//    private fun renderErrorState() {
-//        hideProgressBar()
-//        inflateOrShowErrorNotice()
-//    }
-//
-    private fun renderContentState(dishesMenu: List<Dish>) {
-        //hideProgressBar()
-        menuAdapter.setItems(dishesMenu)
+    private fun renderLoadingState() {
+        binding.progressBar.showWithFade()
+        binding.dishesList.hideWithFade()
     }
-//
-//    private fun hideProgressBar() {
-//        binding.progressBar.hideWithFade()
-//    }
+
+    private fun renderErrorState() {
+        binding.progressBar.hideWithFade()
+
+//        val operationResultDialogFragment =
+//            OperationResultDialogFragment.newInstance(
+//                isOperationSuccess = DialogOperationType.OPERATION_FAIL,
+//                messageId = R.string.booking_error_in_loading,
+//                actionButtonTextId = R.string.booking_error_repeat_loading,
+//                closeButtonTextId = R.string.booking_error_close,
+//                actionRequestCode = DeliveryRequestRequestCode.GET_REQUESTS_FROM_WAREHOUSE.code,
+//                closeRequestCode = DeliveryRequestRequestCode.NAVIGATE_BACK.code
+//            )
+//        showCustomDialog(operationResultDialogFragment)
+    }
+
+    private fun renderContentState(dishesMenu: List<Dish>) {
+        menuAdapter.setItems(dishesMenu)
+
+        binding.progressBar.hideWithFade()
+        binding.dishesList.showWithFade()
+    }
 }

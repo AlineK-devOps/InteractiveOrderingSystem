@@ -1,4 +1,4 @@
-package ru.nstu.ordsys.features.dishes.menu.presentation
+package ru.nstu.ordsys.features.dishes.menu.presentation.state
 
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 

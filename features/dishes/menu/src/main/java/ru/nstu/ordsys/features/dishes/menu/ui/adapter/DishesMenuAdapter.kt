@@ -1,9 +1,11 @@
-package ru.nstu.ordsys.features.dishes.menu.ui
+package ru.nstu.ordsys.features.dishes.menu.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishViewModel
+import ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder.DishView
+import ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder.DishViewHolder
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 class DishesMenuAdapter : RecyclerView.Adapter<DishViewHolder>() {
