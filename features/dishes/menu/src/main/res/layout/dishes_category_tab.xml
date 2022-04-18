@@ -7,4 +7,4 @@
     android:text="@string/stub"
     android:paddingHorizontal="@dimen/padding_20"
     android:paddingVertical="@dimen/padding_15"
-    android:background="@color/blue_gray"/>
+    android:background="@drawable/category_tab_selector"/>

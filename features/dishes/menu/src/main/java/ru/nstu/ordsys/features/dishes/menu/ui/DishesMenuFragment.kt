@@ -73,6 +73,7 @@ class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dish
             menuAdapter = DishesMenuAdapter()
             dishesList.adapter = menuAdapter
 
+            menuTabs.setItemChecked(0, true)
             viewModel.getRollsMenu()
         }
     }

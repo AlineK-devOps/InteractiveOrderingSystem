@@ -3,7 +3,7 @@ package ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import ru.nstu.ordsys.features.dishes.menu.R
-import ru.nstu.ordsys.features.dishes.menu.databinding.DishMenuItemBinding
+import ru.nstu.ordsys.features.dishes.menu.databinding.DishesMenuItemBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishViewModel
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
@@ -16,7 +16,7 @@ class DishView(
         inflate(context, R.layout.dishes_menu_item, this)
     }
 
-    private val binding = DishMenuItemBinding.bind(this)
+    private val binding = DishesMenuItemBinding.bind(this)
 
     private val dishViewModel: DishViewModel
         get() = viewModel as DishViewModel
