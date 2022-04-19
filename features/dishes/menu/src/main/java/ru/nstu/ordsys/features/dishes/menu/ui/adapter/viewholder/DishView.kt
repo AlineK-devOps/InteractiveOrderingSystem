@@ -2,6 +2,7 @@ package ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import ru.nstu.ordsys.features.dishes.menu.R
 import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListItemBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishViewModel
@@ -30,8 +31,19 @@ class DishView(
 
     private fun bindCardView(dish: Dish) {
         with(binding) {
-            dishName.text = dish.name
-            price.text = dish.price.toString()
+            dish.apply {
+
+                dishName.text = resources.getString(R.string.dish_name_format, name, weight)
+                dishComposition.text = composition
+                dishPrice.text = resources.getString(R.string.dish_price_format, price)
+
+                Picasso
+                    .get()
+                    .load(imageUrl)
+                    .placeholder(ru.nstu.ordsys.component.resources.R.drawable.ic_loading)
+                    .error(ru.nstu.ordsys.component.resources.R.drawable.ic_image_not_supported)
+                    .into(dishImage)
+            }
         }
     }
 //

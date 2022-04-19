@@ -32,6 +32,6 @@ class DishesListAdapter : RecyclerView.Adapter<DishViewHolder>() {
 
     private data class DishesAdapterData(
         val dish: Dish,
-        val viewModel: DishViewModel,
+        val viewModel: DishViewModel
     )
 }

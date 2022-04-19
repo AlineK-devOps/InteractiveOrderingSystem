@@ -17,4 +17,5 @@ ext.Versions = [
         RXKOTLIN           : "2.1.0",
         DECORO             : "1.5.0",
         GLIDE              : "4.11.0",
+        PICASSO            : "2.71828",
 ]

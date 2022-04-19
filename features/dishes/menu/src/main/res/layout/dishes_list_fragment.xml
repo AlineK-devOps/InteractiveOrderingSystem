@@ -145,7 +145,6 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_marginHorizontal="@dimen/margin_15"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/category_name"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
         app:layout_constraintEnd_toEndOf="parent"

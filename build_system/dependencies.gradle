@@ -31,4 +31,5 @@ ext.Dependencies = [
 	CICERONE               : "com.github.terrakok:cicerone:${Versions.CICERONE}",
 	FRAGMENT               : "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}",
 	GLIDE                  : "com.github.bumptech.glide:glide:${Versions.GLIDE}",
+	PICASSO				   : "com.squareup.picasso:picasso:${Versions.PICASSO}",
 ]

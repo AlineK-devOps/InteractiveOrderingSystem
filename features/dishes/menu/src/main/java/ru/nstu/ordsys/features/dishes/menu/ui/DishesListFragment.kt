@@ -1,14 +1,18 @@
 package ru.nstu.ordsys.features.dishes.menu.ui
 
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.nstu.ordsys.component.ui.animation.hideWithFade
 import ru.nstu.ordsys.component.ui.animation.showWithFade
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
+import ru.nstu.ordsys.component.ui.recyclerview.setDivider
 import ru.nstu.ordsys.features.dishes.menu.R
 import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListFragmentBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
@@ -71,6 +75,9 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
 
             menuAdapter = DishesListAdapter()
             dishesList.adapter = menuAdapter
+
+            dishesList.layoutManager = GridLayoutManager(context, 3)
+            dishesList.setDivider(ru.nstu.ordsys.component.resources.R.drawable.recycler_view_divider)
 
             menuTabs.setItemChecked(0, true)
             viewModel.getRollsMenu()
