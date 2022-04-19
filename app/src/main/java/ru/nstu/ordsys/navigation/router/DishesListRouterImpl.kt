@@ -1,8 +1,8 @@
 package ru.nstu.ordsys.navigation.router
 
 import com.github.terrakok.cicerone.Router
-import ru.nstu.ordsys.features.dishes.menu.presentation.DishesMenuRouter
+import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListRouter
 
-class DishesMenuRouterImpl(private val router: Router) : DishesMenuRouter {
+class DishesListRouterImpl(private val router: Router) : DishesListRouter {
 
 }

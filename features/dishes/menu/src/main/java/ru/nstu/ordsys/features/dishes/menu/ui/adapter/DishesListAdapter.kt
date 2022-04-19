@@ -8,7 +8,7 @@ import ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder.DishView
 import ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder.DishViewHolder
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
-class DishesMenuAdapter : RecyclerView.Adapter<DishViewHolder>() {
+class DishesListAdapter : RecyclerView.Adapter<DishViewHolder>() {
 
     private var dishesAdapterDataList = emptyList<DishesAdapterData>()
 

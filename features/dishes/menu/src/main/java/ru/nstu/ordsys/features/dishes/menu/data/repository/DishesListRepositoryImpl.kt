@@ -1,13 +1,13 @@
 package ru.nstu.ordsys.features.dishes.menu.data.repository
 
 import io.reactivex.Single
-import ru.nstu.ordsys.features.dishes.menu.data.datasource.DishesMenuDatasource
+import ru.nstu.ordsys.features.dishes.menu.data.datasource.DishesListDatasource
 import ru.nstu.ordsys.features.dishes.menu.data.mapper.toEntity
-import ru.nstu.ordsys.features.dishes.menu.domain.repository.DishesMenuRepository
+import ru.nstu.ordsys.features.dishes.menu.domain.repository.DishesListRepository
 import ru.nstu.ordsys.shared.dishes.data.model.DishModel
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
-class DishesMenuRepositoryImpl(private val datasource: DishesMenuDatasource): DishesMenuRepository {
+class DishesListRepositoryImpl(private val datasource: DishesListDatasource): DishesListRepository {
 
     override fun getSushiMenu(): Single<List<Dish>> =
         datasource.getSushiMenu().map(List<DishModel>::toEntity)

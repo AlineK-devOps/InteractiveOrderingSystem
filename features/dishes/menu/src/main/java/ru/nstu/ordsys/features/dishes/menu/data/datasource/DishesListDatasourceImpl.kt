@@ -1,10 +1,10 @@
 package ru.nstu.ordsys.features.dishes.menu.data.datasource
 
 import io.reactivex.Single
-import ru.nstu.ordsys.features.dishes.menu.data.api.DishesMenuApi
+import ru.nstu.ordsys.features.dishes.menu.data.api.DishesListApi
 import ru.nstu.ordsys.shared.dishes.data.model.DishModel
 
-class DishesMenuDatasourceImpl(private val api: DishesMenuApi) : DishesMenuDatasource {
+class DishesListDatasourceImpl(private val api: DishesListApi) : DishesListDatasource {
 
     override fun getSushiMenu(): Single<List<DishModel>> =
         api.getSushiMenu()

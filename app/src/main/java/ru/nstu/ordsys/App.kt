@@ -8,7 +8,7 @@ import org.koin.core.logger.Level
 import ru.nstu.ordsys.di.appModule
 import ru.nstu.ordsys.di.networkModule
 import ru.nstu.ordsys.di.routersModule
-import ru.nstu.ordsys.features.dishes.menu.di.dishesMenuModule
+import ru.nstu.ordsys.features.dishes.menu.di.dishesListModule
 
 class App : Application() {
 
@@ -22,7 +22,7 @@ class App : Application() {
                 appModule,
                 networkModule,
                 routersModule,
-                dishesMenuModule
+                dishesListModule
             )
         }
     }

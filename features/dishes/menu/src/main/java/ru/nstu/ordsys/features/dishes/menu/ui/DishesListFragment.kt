@@ -5,33 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import ru.nstu.ordsys.component.ui.fragment.BaseFragment
-import ru.nstu.ordsys.features.dishes.menu.R
-import ru.nstu.ordsys.features.dishes.menu.databinding.DishesMenuFragmentBinding
-import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesMenuState
-import ru.nstu.ordsys.features.dishes.menu.presentation.DishesMenuViewModel
-import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.nstu.ordsys.component.ui.animation.hideWithFade
 import ru.nstu.ordsys.component.ui.animation.showWithFade
-import ru.nstu.ordsys.component.ui.dialog.showCustomDialog
-import ru.nstu.ordsys.features.dishes.menu.ui.adapter.DishesMenuAdapter
+import ru.nstu.ordsys.component.ui.fragment.BaseFragment
+import ru.nstu.ordsys.features.dishes.menu.R
+import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListFragmentBinding
+import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
+import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
+import ru.nstu.ordsys.features.dishes.menu.ui.adapter.DishesListAdapter
+import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 
-class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dishes_menu_fragment) {
+class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dishes_list_fragment) {
 
     companion object {
 
-        fun newInstance() = DishesMenuFragment()
+        fun newInstance() = DishesListFragment()
     }
 
-    private val viewModel: DishesMenuViewModel by viewModel()
+    private val viewModel: DishesListViewModel by viewModel()
 
-    private lateinit var menuAdapter: DishesMenuAdapter
+    private lateinit var menuAdapter: DishesListAdapter
     private lateinit var listAdapter: ArrayAdapter<String>
 
     override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
-        DishesMenuFragmentBinding.inflate(inflater, container, false)
+        DishesListFragmentBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,7 +43,7 @@ class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dish
     }
 
     private fun bindAdapters() {
-        with(binding){
+        with(binding) {
 
             listAdapter = ArrayAdapter(
                 requireContext(),
@@ -57,20 +56,20 @@ class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dish
                 val category = resources.getStringArray(R.array.category_name)[position]
 
                 when (category) {
-                    "Роллы"            -> viewModel.getRollsMenu()
-                    "Горячие роллы"    -> viewModel.getHotRollsMenu()
-                    "Суши"             -> viewModel.getSushiMenu()
+                    "Роллы" -> viewModel.getRollsMenu()
+                    "Горячие роллы" -> viewModel.getHotRollsMenu()
+                    "Суши" -> viewModel.getSushiMenu()
                     "Салаты и закуски" -> viewModel.getSnacksMenu()
-                    "Вок"              -> viewModel.getWokMenu()
-                    "Супы"             -> viewModel.getSoupsMenu()
-                    "Напитки"          -> viewModel.getDrinksMenu()
-                    "Дополнительно"    -> viewModel.getAdditionallyMenu()
+                    "Вок" -> viewModel.getWokMenu()
+                    "Супы" -> viewModel.getSoupsMenu()
+                    "Напитки" -> viewModel.getDrinksMenu()
+                    "Дополнительно" -> viewModel.getAdditionallyMenu()
                 }
 
                 categoryName.text = category
             }
 
-            menuAdapter = DishesMenuAdapter()
+            menuAdapter = DishesListAdapter()
             dishesList.adapter = menuAdapter
 
             menuTabs.setItemChecked(0, true)
@@ -79,7 +78,7 @@ class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dish
     }
 
     private fun setListeners() {
-        with(binding){
+        with(binding) {
 
             waiterCallingButton.setOnClickListener {
 
@@ -97,12 +96,12 @@ class DishesMenuFragment : BaseFragment<DishesMenuFragmentBinding>(R.layout.dish
         viewModel.state.observe(viewLifecycleOwner, ::handleState)
     }
 
-    private fun handleState(state: DishesMenuState) {
+    private fun handleState(state: DishesListState) {
         when (state) {
-            is DishesMenuState.Initial,
-            is DishesMenuState.Loading      -> renderLoadingState()
-            is DishesMenuState.Error        -> renderErrorState()
-            is DishesMenuState.Content      -> renderContentState(state.dishesMenu)
+            is DishesListState.Initial,
+            is DishesListState.Loading -> renderLoadingState()
+            is DishesListState.Error -> renderErrorState()
+            is DishesListState.Content -> renderContentState(state.dishesMenu)
         }
     }
 

@@ -2,23 +2,23 @@ package ru.nstu.ordsys.features.dishes.menu.di
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import ru.nstu.ordsys.features.dishes.menu.data.api.DishesMenuApi
-import ru.nstu.ordsys.features.dishes.menu.data.datasource.DishesMenuDatasource
-import ru.nstu.ordsys.features.dishes.menu.data.datasource.DishesMenuDatasourceImpl
-import ru.nstu.ordsys.features.dishes.menu.data.repository.DishesMenuRepositoryImpl
-import ru.nstu.ordsys.features.dishes.menu.domain.repository.DishesMenuRepository
+import ru.nstu.ordsys.features.dishes.menu.data.api.DishesListApi
+import ru.nstu.ordsys.features.dishes.menu.data.datasource.DishesListDatasource
+import ru.nstu.ordsys.features.dishes.menu.data.datasource.DishesListDatasourceImpl
+import ru.nstu.ordsys.features.dishes.menu.data.repository.DishesListRepositoryImpl
+import ru.nstu.ordsys.features.dishes.menu.domain.repository.DishesListRepository
 import ru.nstu.ordsys.features.dishes.menu.domain.usecase.*
-import ru.nstu.ordsys.features.dishes.menu.presentation.DishesMenuViewModel
+import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
 import ru.nstu.ordsys.mockapiserver.changer.MOCK
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
 import ru.nstu.ordsys.mockapiserver.retrofit.createRetrofitService
 
-val dishesMenuModule = module {
-    factory { createRetrofitService<DishesMenuApi>(getRetrofit(MOCK)) }
+val dishesListModule = module {
+    factory { createRetrofitService<DishesListApi>(getRetrofit(MOCK)) }
 
-    factory<DishesMenuDatasource> { DishesMenuDatasourceImpl(get()) }
+    factory<DishesListDatasource> { DishesListDatasourceImpl(get()) }
 
-    factory<DishesMenuRepository> { DishesMenuRepositoryImpl(get()) }
+    factory<DishesListRepository> { DishesListRepositoryImpl(get()) }
 
     factory { GetAdditionallyMenuUseCase(get()) }
     factory { GetDrinksMenuUseCase(get()) }
@@ -30,7 +30,7 @@ val dishesMenuModule = module {
     factory { GetWokMenuUseCase(get()) }
 
     viewModel {
-        DishesMenuViewModel(
+        DishesListViewModel(
             getAdditionallyMenuUseCase = get(),
             getDrinksMenuUseCase = get(),
             getHotRollsMenuUseCase = get(),

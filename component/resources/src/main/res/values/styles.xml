@@ -62,4 +62,29 @@
         <item name="android:textColor">@color/dark_blue_gray</item>
     </style>
 
+    <style name="Theme.InteractiveOrderingSystem.CardViewTitle">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/dark_blue_gray</item>
+    </style>
+
+    <style name="Theme.InteractiveOrderingSystem.CardViewText">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontStyle">normal</item>
+        <item name="fontWeight">700</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+
+    <style name="Theme.InteractiveOrderingSystem.CardViewBackground"
+        parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/white_gray</item>
+        <item name="cardCornerRadius">@dimen/radius_8</item>
+        <item name="android:layout_margin">@dimen/margin_8</item>
+        <item name="cardElevation">@dimen/size_2</item>
+    </style>
+
 </resources>

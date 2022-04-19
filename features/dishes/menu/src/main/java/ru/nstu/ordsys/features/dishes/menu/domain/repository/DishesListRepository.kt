@@ -3,7 +3,7 @@ package ru.nstu.ordsys.features.dishes.menu.domain.repository
 import io.reactivex.Single
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
-interface DishesMenuRepository {
+interface DishesListRepository {
 
     fun getSushiMenu(): Single<List<Dish>>
 

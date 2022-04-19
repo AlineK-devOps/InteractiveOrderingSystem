@@ -6,9 +6,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import ru.nstu.ordsys.component.ui.mvvm.BaseViewModel
 import ru.nstu.ordsys.features.dishes.menu.domain.usecase.*
-import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesMenuState
+import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
 
-class DishesMenuViewModel(
+class DishesListViewModel(
     private val getAdditionallyMenuUseCase: GetAdditionallyMenuUseCase,
     private val getDrinksMenuUseCase: GetDrinksMenuUseCase,
     private val getHotRollsMenuUseCase: GetHotRollsMenuUseCase,
@@ -17,127 +17,127 @@ class DishesMenuViewModel(
     private val getSoupsMenuUseCase: GetSoupsMenuUseCase,
     private val getSushiMenuUseCase: GetSushiMenuUseCase,
     private val getWokMenuUseCase: GetWokMenuUseCase,
-    private val router: DishesMenuRouter
+    private val router: DishesListRouter
     ) : BaseViewModel() {
 
-    private var _state = MutableLiveData<DishesMenuState>(DishesMenuState.Initial)
-    val state: LiveData<DishesMenuState> = _state
+    private var _state = MutableLiveData<DishesListState>(DishesListState.Initial)
+    val state: LiveData<DishesListState> = _state
 
     fun getRollsMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getRollsMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getHotRollsMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getHotRollsMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getSushiMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getSushiMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getSnacksMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getSnacksMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getWokMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getWokMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getSoupsMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getSoupsMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getDrinksMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getDrinksMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
     }
 
     fun getAdditionallyMenu() {
-        _state.value = DishesMenuState.Loading
+        _state.value = DishesListState.Loading
         getAdditionallyMenuUseCase()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { vacations ->
-                    _state.value = DishesMenuState.Content(vacations)
+                    _state.value = DishesListState.Content(vacations)
                 },
                 onError = {
-                    _state.value = DishesMenuState.Error
+                    _state.value = DishesListState.Error
                 }
             )
             .addToDisposableList()
