@@ -62,7 +62,7 @@
         <item name="android:textColor">@color/dark_blue_gray</item>
     </style>
 
-    <style name="Theme.InteractiveOrderingSystem.CardViewTitle">
+    <style name="Theme.InteractiveOrderingSystem.MainTitleText">
         <item name="fontFamily">@font/roboto</item>
         <item name="textAllCaps">false</item>
         <item name="fontStyle">normal</item>
@@ -70,7 +70,7 @@
         <item name="android:textColor">@color/dark_blue_gray</item>
     </style>
 
-    <style name="Theme.InteractiveOrderingSystem.CardViewText">
+    <style name="Theme.InteractiveOrderingSystem.SubTitleText">
         <item name="fontFamily">@font/roboto</item>
         <item name="textAllCaps">false</item>
         <item name="fontStyle">normal</item>
@@ -78,7 +78,7 @@
         <item name="android:textColor">@color/dark_gray</item>
     </style>
 
-    <style name="Theme.InteractiveOrderingSystem.CardViewNumberText">
+    <style name="Theme.InteractiveOrderingSystem.BoldNumberText">
         <item name="fontFamily">@font/roboto_black</item>
         <item name="textAllCaps">false</item>
         <item name="fontStyle">normal</item>

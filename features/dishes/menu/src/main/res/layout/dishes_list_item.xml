@@ -20,28 +20,89 @@
         android:layout_width="@dimen/size_330"
         android:layout_height="wrap_content"
         android:text="@string/dish_name_format"
+        android:padding="@dimen/padding_10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dish_image"
         app:layout_constraintEnd_toEndOf="@id/dish_image"
-        style="@style/Theme.InteractiveOrderingSystem.CardViewTitle"/>
+        style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
     <TextView
         android:id="@+id/dish_composition"
         android:layout_width="@dimen/size_330"
         android:layout_height="wrap_content"
         android:text="@string/stub"
+        android:paddingHorizontal="@dimen/padding_10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dish_name"
         app:layout_constraintEnd_toEndOf="@id/dish_image"
-        style="@style/Theme.InteractiveOrderingSystem.CardViewText"/>
+        style="@style/Theme.InteractiveOrderingSystem.SubTitleText"/>
 
     <TextView
         android:id="@+id/dish_price"
+        style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10"
         android:text="@string/stub"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/margin_15"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toStartOf="@id/add_to_cart_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/add_to_cart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:src="@drawable/ic_add_55"
+        android:layout_margin="@dimen/margin_15"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dish_composition"
-        style="@style/Theme.InteractiveOrderingSystem.CardViewNumberText"/>
+        tools:ignore="ContentDescription"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/count_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:orientation="horizontal"
+        android:background="@drawable/rectangle_field"
+        android:visibility="gone"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dish_composition">
+
+        <ImageButton
+            android:id="@+id/remove_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_remove_35"
+            android:layout_margin="@dimen/margin_8"
+            android:background="@color/white_gray"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+
+        <ImageButton
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_35"
+            android:layout_margin="@dimen/margin_10"
+            android:background="@color/white_gray"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

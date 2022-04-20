@@ -28,5 +28,6 @@
 	<dimen name="size_90">90dp</dimen>
 	<dimen name="size_185">185dp</dimen>
 	<dimen name="size_210">210dp</dimen>
+	<dimen name="size_250">250dp</dimen>
 	<dimen name="size_330">330dp</dimen>
 </resources>
