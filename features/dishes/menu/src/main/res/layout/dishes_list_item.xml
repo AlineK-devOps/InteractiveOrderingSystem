@@ -61,8 +61,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dish_composition"
-        tools:ignore="ContentDescription"
-        android:visibility="gone"/>
+        tools:ignore="ContentDescription"/>
 
     <LinearLayout
         android:id="@+id/count_picker"
@@ -78,7 +77,7 @@
         app:layout_constraintTop_toBottomOf="@id/dish_composition">
 
         <ImageButton
-            android:id="@+id/remove_button"
+            android:id="@+id/remove_one_from_cart_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_remove_35"
@@ -95,7 +94,7 @@
             style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
 
         <ImageButton
-            android:id="@+id/add_button"
+            android:id="@+id/add_one_to_cart_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_35"
