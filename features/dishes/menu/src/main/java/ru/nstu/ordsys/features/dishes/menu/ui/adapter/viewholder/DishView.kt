@@ -40,7 +40,7 @@ class DishView(
 
                 dishName.text = resources.getString(R.string.dish_name_format, name, weight)
                 dishComposition.text = composition
-                dishPrice.text = resources.getString(R.string.dish_price_format, price)
+                dishPrice.text = resources.getString(R.string.price_format, price)
 
                 Picasso
                     .get()

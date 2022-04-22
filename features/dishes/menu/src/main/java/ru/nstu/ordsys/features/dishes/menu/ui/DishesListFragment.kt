@@ -18,6 +18,7 @@ import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListFragmentBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
 import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
 import ru.nstu.ordsys.features.dishes.menu.ui.adapter.DishesListAdapter
+import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 
@@ -101,6 +102,7 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
 
     private fun setObservers() {
         viewModel.state.observe(viewLifecycleOwner, ::handleState)
+        Order.totalPrice.observe(viewLifecycleOwner, ::totalPriceChanged)
     }
 
     private fun handleState(state: DishesListState) {
@@ -137,5 +139,9 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
 
         binding.progressBar.hideWithFade()
         binding.dishesList.showWithFade()
+    }
+
+    private fun totalPriceChanged(price: Int){
+        binding.totalPrice.text = getString(R.string.price_format, price)
     }
 }

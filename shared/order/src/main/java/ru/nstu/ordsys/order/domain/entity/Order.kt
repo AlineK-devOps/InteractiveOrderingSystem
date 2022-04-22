@@ -1,10 +1,15 @@
 package ru.nstu.ordsys.order.domain.entity
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 object Order {
 
     private val order = HashMap<Dish, Int>()
+
+    private val total = MutableLiveData(0)
+    val totalPrice: LiveData<Int> = total
 
     fun addToOrder(dish: Dish) {
         if (order.containsKey(dish)) {
@@ -12,6 +17,8 @@ object Order {
             order.put(key = dish, value = previousCount + 1)
         } else
             order.put(key = dish, value = 1)
+
+        updateTotalPrice()
     }
 
     fun removeFromOrder(dish: Dish) {
@@ -22,15 +29,18 @@ object Order {
             else
                 order.remove(dish)
         }
+
+        updateTotalPrice()
     }
 
     fun getDishCount(dish: Dish): Int =
         order.getOrDefault(dish, 0)
 
-    fun getTotalPrice(): Int =
-        order.map { (dish, count) -> dish.price * count }.sum()
-
     fun clearOrder() {
         order.clear()
+    }
+
+    private fun updateTotalPrice(){
+        total.value = order.map { (dish, count) -> dish.price * count }.sum()
     }
 }
