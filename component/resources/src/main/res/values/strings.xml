@@ -1,3 +1,8 @@
 <resources>
 	<string name="stub">Тестовые данные</string>
+	<string name="waiter_calling_confirmation">Вы уверены, что хотите\nвызвать официанта?</string>
+	<string name="waiting_the_waiter">Официант вызван, ожидайте</string>
+	<string name="call_button_text">Вызвать</string>
+	<string name="cancel_button_text">Отмена</string>
+	<string name="close_button_text">Закрыть</string>
 </resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white_gray"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/state_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/blue_gray"
+        android:text="@string/waiter_calling_confirmation"
+        android:paddingHorizontal="@dimen/padding_80"
+        android:paddingVertical="@dimen/padding_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/close_button"
+        style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/close_button"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_button_text"
+        android:textColor="@color/dark_gray"
+        android:background="@color/light_gray"
+        android:paddingVertical="@dimen/padding_15"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/action_button"
+        style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/action_button"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:text="@string/call_button_text"
+        android:textColor="@color/white_gray"
+        android:background="@color/orange"
+        android:paddingVertical="@dimen/padding_15"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/close_button"
+        style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

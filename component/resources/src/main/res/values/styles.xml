@@ -93,4 +93,10 @@
         <item name="android:textSize">@dimen/text_size_16</item>
         <item name="android:textColor">@color/orange</item>
     </style>
+
+    <style name="Theme.InteractiveOrderingSystem.DialogText">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
+    </style>
 </resources>

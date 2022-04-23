@@ -8,5 +8,7 @@ include ':features:dishes:menu'
 
 include ':shared:dishes'
 include ':shared:order'
+include ':shared:operation'
+include ':shared:waiter'
 
 rootProject.name = "Интерактивная система заказов"

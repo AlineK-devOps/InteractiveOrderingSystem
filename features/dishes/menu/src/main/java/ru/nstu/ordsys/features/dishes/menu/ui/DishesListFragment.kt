@@ -1,16 +1,18 @@
 package ru.nstu.ordsys.features.dishes.menu.ui
 
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.recyclerview.widget.DividerItemDecoration
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.nstu.ordsys.component.ui.animation.hideWithFade
 import ru.nstu.ordsys.component.ui.animation.showWithFade
+import ru.nstu.ordsys.component.ui.dialog.showCustomDialog
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
 import ru.nstu.ordsys.component.ui.recyclerview.setDivider
 import ru.nstu.ordsys.features.dishes.menu.R
@@ -18,11 +20,14 @@ import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListFragmentBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
 import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
 import ru.nstu.ordsys.features.dishes.menu.ui.adapter.DishesListAdapter
+import ru.nstu.ordsys.operation.ui.DialogOperationType
+import ru.nstu.ordsys.operation.ui.OperationResultDialogFragment
 import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 
-class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dishes_list_fragment) {
+class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dishes_list_fragment),
+    OperationResultDialogFragment.OperationResultDialogFragmentListener {
 
     companion object {
 
@@ -90,6 +95,16 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
 
             waiterCallingButton.setOnClickListener {
 
+                val dialog =
+                    OperationResultDialogFragment.newInstance(
+                        operationType = DialogOperationType.OPERATION_QUESTION,
+                        messageId = ru.nstu.ordsys.component.resources.R.string.waiter_calling_confirmation,
+                        actionButtonTextId = ru.nstu.ordsys.component.resources.R.string.call_button_text,
+                        closeButtonTextId = ru.nstu.ordsys.component.resources.R.string.cancel_button_text,
+                        actionRequestCode = OperationResultDialogFragment.DialogCloseResults.ACTION.code,
+                        closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
+                    )
+                showCustomDialog(dialog)
             }
             orderButton.setOnClickListener {
 
@@ -141,7 +156,21 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
         binding.dishesList.showWithFade()
     }
 
-    private fun totalPriceChanged(price: Int){
+    private fun totalPriceChanged(price: Int) {
         binding.totalPrice.text = getString(R.string.price_format, price)
+    }
+
+    private fun showToast(textId: Int){
+        val toast: Toast = Toast.makeText(context, textId, Toast.LENGTH_LONG)
+        val toastLayout = toast.view as LinearLayout?
+        val toastTV = toastLayout!!.getChildAt(0) as TextView
+        toastTV.textSize = 22f
+        toast.show()
+    }
+
+    override fun onDialogCloseResult(requestCode: Int) {
+        when (requestCode){
+            OperationResultDialogFragment.DialogCloseResults.ACTION.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+        }
     }
 }

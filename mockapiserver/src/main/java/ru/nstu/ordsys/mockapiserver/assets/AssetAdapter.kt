@@ -96,6 +96,14 @@ internal fun postFake(
             )
         }
 
+        "/api/waiter_call/15"                 -> {
+            logBody(chain)
+            response.createResponse(
+                description = "Waiter was calling!",
+                body = """{ "ok" : "ok" }"""
+            )
+        }
+
         else                                   -> {
             error404(response)
         }

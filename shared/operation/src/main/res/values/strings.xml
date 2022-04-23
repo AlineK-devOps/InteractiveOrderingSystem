@@ -1,0 +1,4 @@
+<resources>
+    <string name="empty_text"> </string>
+    <string name="dialog_empty_warning_text">Приносим извинения,\nдиалоговое сообщение куда-то пропало</string>
+</resources>
