@@ -12,3 +12,4 @@ include ':shared:operation'
 include ':shared:waiter'
 
 rootProject.name = "Интерактивная система заказов"
+include ':features:order'
