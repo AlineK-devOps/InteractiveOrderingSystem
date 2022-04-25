@@ -45,6 +45,9 @@ object Order {
 
     fun clearOrder() {
         order.clear()
+
+        updateOrderList()
+        updateTotalPrice()
     }
 
     private fun updateTotalPrice(){

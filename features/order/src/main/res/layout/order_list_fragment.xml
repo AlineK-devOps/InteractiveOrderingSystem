@@ -159,6 +159,7 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
         android:layout_marginHorizontal="@dimen/margin_15"
+        android:background="@color/white_gray"
         app:layout_constraintTop_toBottomOf="@id/order_title"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,6 +183,36 @@
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clear_cart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear_cart_button_text"
+        android:textColor="@color/dark_gray"
+        android:background="@color/light_gray"
+        android:paddingVertical="@dimen/padding_15"
+        android:paddingHorizontal="@dimen/padding_30"
+        android:layout_marginVertical="@dimen/margin_15"
+        android:layout_marginHorizontal="@dimen/margin_30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send_order_button"
+        style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send_order_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_order_button_text"
+        android:textColor="@color/white_gray"
+        android:background="@color/orange"
+        android:paddingVertical="@dimen/padding_15"
+        android:paddingHorizontal="@dimen/padding_30"
+        android:layout_marginVertical="@dimen/margin_15"
+        android:layout_marginEnd="@dimen/margin_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         style="@style/Theme.InteractiveOrderingSystem.DialogText"/>

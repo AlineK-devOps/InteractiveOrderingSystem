@@ -65,14 +65,14 @@ class OrderListFragment :
             menuTabs.adapter = listAdapter
 
             menuTabs.setOnItemClickListener { _, _, position, _ ->
-                //viewModel.navigateToDishesListScreen(position)
+                viewModel.navigateToDishesListScreen(position)
             }
 
             orderAdapter = OrderListAdapter()
             orderList.adapter = orderAdapter
 
             orderList.layoutManager = LinearLayoutManager(context)
-            orderList.setDivider(R.drawable.recycler_view_divider)
+            orderList.setDivider(R.drawable.thin_recycler_view_divider)
         }
     }
 
@@ -84,19 +84,22 @@ class OrderListFragment :
                 val dialog =
                     OperationResultDialogFragment.newInstance(
                         operationType = DialogOperationType.OPERATION_QUESTION,
-                        messageId = ru.nstu.ordsys.component.resources.R.string.waiter_calling_confirmation,
-                        actionButtonTextId = ru.nstu.ordsys.component.resources.R.string.call_button_text,
-                        closeButtonTextId = ru.nstu.ordsys.component.resources.R.string.cancel_button_text,
+                        messageId = R.string.waiter_calling_confirmation,
+                        actionButtonTextId = R.string.call_button_text,
+                        closeButtonTextId = R.string.cancel_button_text,
                         actionRequestCode = OperationResultDialogFragment.DialogCloseResults.ACTION.code,
                         closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
                     )
                 showCustomDialog(dialog)
             }
-            orderButton.setOnClickListener {
-
-            }
             billButton.setOnClickListener {
 
+            }
+            clearCartButton.setOnClickListener {
+                viewModel.clearCart()
+            }
+            sendOrderButton.setOnClickListener {
+                viewModel.sendOrder()
             }
         }
     }
@@ -141,13 +144,11 @@ class OrderListFragment :
     }
 
     private fun renderContentState(order: HashMap<Dish, Int>) {
-        with(binding) {
-            if (order.isEmpty())
-                showEmptyOrderHint()
-            else {
-                orderAdapter.setItems(order)
-                showOrderList()
-            }
+        if (order.isEmpty())
+            showEmptyOrderHint()
+        else {
+            orderAdapter.setItems(order)
+            showOrderList()
         }
     }
 
@@ -168,6 +169,8 @@ class OrderListFragment :
             progressBar.hideWithFade()
             orderList.showWithFade()
             emptyOrderHint.hideWithFade()
+            sendOrderButton.showWithFade()
+            clearCartButton.showWithFade()
         }
     }
 
@@ -176,6 +179,8 @@ class OrderListFragment :
             progressBar.hideWithFade()
             orderList.hideWithFade()
             emptyOrderHint.showWithFade()
+            sendOrderButton.hideWithFade()
+            clearCartButton.hideWithFade()
         }
     }
 

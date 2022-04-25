@@ -6,5 +6,5 @@ import ru.nstu.ordsys.features.dishes.menu.getDishesListScreen
 
 fun buildCicerone(): Cicerone<Router> =
     Cicerone.create().apply {
-        router.newRootScreen(getDishesListScreen())
+        router.newRootScreen(getDishesListScreen(0))
     }

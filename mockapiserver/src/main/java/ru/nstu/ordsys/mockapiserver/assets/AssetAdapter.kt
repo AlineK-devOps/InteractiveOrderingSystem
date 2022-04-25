@@ -104,6 +104,14 @@ internal fun postFake(
             )
         }
 
+        "/api/order/"                 -> {
+            logBody(chain)
+            response.createResponse(
+                description = "Order was send!",
+                body = """{ "ok" : "ok" }"""
+            )
+        }
+
         else                                   -> {
             error404(response)
         }

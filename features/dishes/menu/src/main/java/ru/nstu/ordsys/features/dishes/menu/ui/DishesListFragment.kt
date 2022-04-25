@@ -26,12 +26,13 @@ import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 
-class DishesListFragment : BaseFragment<DishesListFragmentBinding>(ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_list_fragment),
+class DishesListFragment(val position: Int)
+    : BaseFragment<DishesListFragmentBinding>(ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_list_fragment),
     OperationResultDialogFragment.OperationResultDialogFragmentListener {
 
     companion object {
 
-        fun newInstance() = DishesListFragment()
+        fun newInstance(position: Int) = DishesListFragment(position)
     }
 
     private val viewModel: DishesListViewModel by viewModel()
@@ -84,10 +85,19 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(ru.nstu.ordsy
             dishesList.adapter = menuAdapter
 
             dishesList.layoutManager = GridLayoutManager(context, 3)
-            dishesList.setDivider(R.drawable.recycler_view_divider)
+            dishesList.setDivider(R.drawable.bold_recycler_view_divider)
 
-            menuTabs.setItemChecked(0, true)
-            viewModel.getRollsMenu()
+            menuTabs.setItemChecked(position, true)
+            when (position) {
+                0 -> viewModel.getRollsMenu()
+                1 -> viewModel.getHotRollsMenu()
+                2 -> viewModel.getSushiMenu()
+                3 -> viewModel.getSnacksMenu()
+                4 -> viewModel.getWokMenu()
+                5 -> viewModel.getSoupsMenu()
+                6 -> viewModel.getDrinksMenu()
+                7 -> viewModel.getAdditionallyMenu()
+            }
         }
     }
 
