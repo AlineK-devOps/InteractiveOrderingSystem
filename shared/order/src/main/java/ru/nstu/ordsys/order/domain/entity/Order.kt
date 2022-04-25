@@ -6,7 +6,8 @@ import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 object Order {
 
-    private val order = HashMap<Dish, Int>()
+    val order = HashMap<Dish, Int>()
+    val orderLiveData = MutableLiveData(order)
 
     private val total = MutableLiveData(0)
     val totalPrice: LiveData<Int> = total
@@ -18,6 +19,7 @@ object Order {
         } else
             order.put(key = dish, value = 1)
 
+        updateOrderList()
         updateTotalPrice()
     }
 
@@ -30,7 +32,12 @@ object Order {
                 order.remove(dish)
         }
 
+        updateOrderList()
         updateTotalPrice()
+    }
+
+    private fun updateOrderList(){
+        orderLiveData.value = order
     }
 
     fun getDishCount(dish: Dish): Int =

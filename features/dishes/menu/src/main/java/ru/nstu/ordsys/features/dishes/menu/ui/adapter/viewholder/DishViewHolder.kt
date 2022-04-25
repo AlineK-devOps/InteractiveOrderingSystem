@@ -7,6 +7,6 @@ import ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder.DishView
 class DishViewHolder(private val view: DishView) : RecyclerView.ViewHolder(view) {
 
     fun setViewModel(viewModel: BaseViewModel) {
-        view.setViewModel(viewModel)
+        view.viewModel = viewModel
     }
 }

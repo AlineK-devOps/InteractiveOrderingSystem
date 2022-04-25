@@ -2,8 +2,8 @@ package ru.nstu.ordsys.order.ui.adapter.viewholder
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
-import ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder.BaseView
-import ru.nstu.ordsys.order.R
+import ru.nstu.ordsys.component.ui.fragment.BaseView
+import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.order.databinding.OrderItemViewBinding
 import ru.nstu.ordsys.order.presentation.OrderItemViewModel
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
@@ -14,7 +14,7 @@ class OrderItemView(
 ) : BaseView(parent.context) {
 
     init {
-        inflate(context, R.layout.order_item_view, this)
+        inflate(context, ru.nstu.ordsys.order.R.layout.order_item_view, this)
     }
 
     private val binding = OrderItemViewBinding.bind(this)
@@ -25,7 +25,7 @@ class OrderItemView(
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
 
-        bindCardView()
+        bindCardView(orderItemViewModel.dish, orderItemViewModel.countDish)
         setListeners()
         setObservers()
     }
@@ -34,46 +34,30 @@ class OrderItemView(
         with(binding) {
             dish.apply {
 
-                orderItemName.text = resources.getString(ru.nstu.ordsys.features.dishes.menu.R.string.dish_name_format, name, weight)
+                orderItemName.text = resources.getString(R.string.dish_name_format, name, weight)
                 countText.text = count.toString()
-                itemPrice.text = resources.getString(ru.nstu.ordsys.features.dishes.menu.R.string.price_format, price * count )
+                itemPrice.text = resources.getString(R.string.price_format, price * count )
             }
         }
     }
 
     private fun setListeners() {
         with(binding) {
-            addToCartButton.setOnClickListener {
-                dishViewModel.addDishToOrder()
-            }
             addOneToCartButton.setOnClickListener {
-                dishViewModel.addDishToOrder()
+                orderItemViewModel.addDishToOrder()
             }
             removeOneFromCartButton.setOnClickListener {
-                dishViewModel.removeDishFromOrder()
+                orderItemViewModel.removeDishFromOrder()
             }
         }
     }
 
     private fun setObservers() {
-        dishViewModel.count.observe(this, ::changeDishCount)
+        orderItemViewModel.count.observe(this, ::changeDishCount)
     }
 
     private fun changeDishCount(count: Int) {
-        if (count > 0) {
-            showCountPicker()
-            binding.count.text = count.toString()
-        } else
-            hideCountPicker()
-    }
-
-    private fun showCountPicker() {
-        binding.addToCartButton.hideWithFade()
-        binding.countPicker.showWithFade()
-    }
-
-    private fun hideCountPicker() {
-        binding.addToCartButton.showWithFade()
-        binding.countPicker.hideWithFade()
+        binding.countText.text = count.toString()
+        binding.itemPrice.text = resources.getString(R.string.price_format, count * orderItemViewModel.dish.price)
     }
 }

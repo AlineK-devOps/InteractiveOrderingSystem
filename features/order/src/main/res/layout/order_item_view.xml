@@ -11,21 +11,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dish_name_format"
-        android:layout_margin="@dimen/margin_15"
+        android:layout_marginHorizontal="@dimen/margin_30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
     <LinearLayout
         android:id="@+id/count_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
+        android:layout_marginVertical="@dimen/margin_5"
+        android:layout_marginStart="@dimen/margin_200"
         android:orientation="horizontal"
         android:background="@drawable/rectangle_field"
-        app:layout_constraintStart_toEndOf="@id/order_item_name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_price">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageButton
             android:id="@+id/remove_one_from_cart_button"
@@ -59,11 +62,11 @@
         android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
+        android:layout_marginHorizontal="@dimen/margin_30"
         android:text="@string/price_format"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/count_picker"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         style="@style/Theme.InteractiveOrderingSystem.MainTitleText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

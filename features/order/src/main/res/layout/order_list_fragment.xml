@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/screen"
+    android:background="@color/light_gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/menu_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_90"
+        android:background="@color/white_gray"
+        android:elevation="@dimen/size_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/separator3"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toStartOf="@id/waiter_calling_button"/>
+
+            <Button
+                android:id="@+id/waiter_calling_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_person"
+                android:text="@string/waiter_calling_button_text"
+                android:drawableTint="@color/blue_gray"
+                app:layout_constraintEnd_toStartOf="@+id/order_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:id="@+id/separator1"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/waiter_calling_button"
+                app:layout_constraintEnd_toStartOf="@id/order_button"/>
+
+            <Button
+                android:id="@+id/order_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_cart"
+                android:text="@string/order_button_text"
+                android:drawableTint="@color/blue_gray"
+                app:layout_constraintEnd_toStartOf="@+id/bill_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/menu_hint_total_price"
+                android:layout_width="@dimen/size_0"
+                android:layout_height="wrap_content"
+                android:text="@string/price_format"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginStart="@dimen/margin_110"
+                app:layout_constraintStart_toStartOf="@id/order_button"
+                app:layout_constraintEnd_toEndOf="@id/order_button"
+                app:layout_constraintTop_toTopOf="@id/order_button"
+                app:layout_constraintBottom_toBottomOf="@id/order_button"
+                style="@style/Theme.InteractiveOrderingSystem.HintText"/>
+
+            <View
+                android:id="@+id/separator2"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/order_button"
+                app:layout_constraintEnd_toStartOf="@id/bill_button"/>
+
+            <Button
+                android:id="@+id/bill_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_bill"
+                android:text="@string/bill_button_text"
+                android:drawableTint="@color/blue_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/table_number_background"
+                android:layout_width="@dimen/size_210"
+                android:layout_height="match_parent"
+                android:background="@color/orange"
+                android:paddingHorizontal="@dimen/padding_30"
+                android:paddingVertical="@dimen/padding_20"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/table_number"
+                    style="@style/Theme.InteractiveOrderingSystem.ToolbarTableNumberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_tabs_background"
+        android:layout_width="@dimen/size_210"
+        android:layout_height="@dimen/size_0"
+        android:background="@color/blue_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar">
+
+        <ListView
+            android:id="@+id/menu_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_70"
+            android:choiceMode="singleChoice"
+            android:entries="@array/category_name"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/order_title"
+        style="@style/Theme.InteractiveOrderingSystem.MenuTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_order"
+        android:padding="@dimen/padding_15"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar" />
+
+    <View
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_2"
+        android:background="@color/white_gray"
+        android:layout_marginEnd="@dimen/margin_15"
+        app:layout_constraintStart_toEndOf="@id/order_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/order_title"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/order_list"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        app:layout_constraintTop_toBottomOf="@id/order_title"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/size_70"
+        android:layout_height="@dimen/size_70"
+        android:indeterminateTint="@color/orange"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/empty_order_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empty_order_hint"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
+        app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

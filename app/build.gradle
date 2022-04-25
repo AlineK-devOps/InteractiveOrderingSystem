@@ -28,6 +28,7 @@ dependencies {
     implementation project(':component:ui')
 
     implementation project(':features:dishes:menu')
+    implementation project(':features:order')
 
     implementation project(':shared:dishes')
 }

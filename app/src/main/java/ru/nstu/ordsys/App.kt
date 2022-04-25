@@ -9,6 +9,7 @@ import ru.nstu.ordsys.di.appModule
 import ru.nstu.ordsys.di.networkModule
 import ru.nstu.ordsys.di.routersModule
 import ru.nstu.ordsys.features.dishes.menu.di.dishesListModule
+import ru.nstu.ordsys.order.di.orderListModule
 
 class App : Application() {
 
@@ -22,7 +23,8 @@ class App : Application() {
                 appModule,
                 networkModule,
                 routersModule,
-                dishesListModule
+                dishesListModule,
+                orderListModule
             )
         }
     }

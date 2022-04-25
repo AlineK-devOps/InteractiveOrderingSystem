@@ -1,15 +1,13 @@
 package ru.nstu.ordsys.operation.ui
 
-import android.graphics.Color
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.isGone
+import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.component.ui.dialog.BaseCustomDialog
-import ru.nstu.ordsys.operation.R
 import ru.nstu.ordsys.operation.databinding.OperationResultDialogFragmentBinding
 
 private const val OPERATION_TYPE_PROPERTY = "OPERATION_TYPE_PROPERTY"
@@ -127,7 +125,7 @@ class OperationResultDialogFragment :
 
         when (OperationType) {
             DialogOperationType.OPERATION_SUCCESS,
-            DialogOperationType.OPERATION_FAIL     -> createSuccessDialog()
+            DialogOperationType.OPERATION_FAIL -> createSuccessDialog()
 
             DialogOperationType.OPERATION_QUESTION -> createQuestionDialog()
         }
@@ -167,14 +165,29 @@ class OperationResultDialogFragment :
         }
     }
 
-    private fun createSuccessDialog(){
-        binding.closeButton.setBackgroundColor(ContextCompat.getColor(requireContext(), ru.nstu.ordsys.component.resources.R.color.orange))
+    private fun createSuccessDialog() {
+        binding.closeButton.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                ru.nstu.ordsys.component.resources.R.color.orange
+            )
+        )
     }
 
-    private fun createQuestionDialog(){
-        with (binding){
-            actionButton.setBackgroundColor(ContextCompat.getColor(requireContext(), ru.nstu.ordsys.component.resources.R.color.orange))
-            closeButton.setBackgroundColor(ContextCompat.getColor(requireContext(), ru.nstu.ordsys.component.resources.R.color.light_gray))
+    private fun createQuestionDialog() {
+        with(binding) {
+            actionButton.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    ru.nstu.ordsys.component.resources.R.color.orange
+                )
+            )
+            closeButton.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    ru.nstu.ordsys.component.resources.R.color.light_gray
+                )
+            )
         }
     }
 }

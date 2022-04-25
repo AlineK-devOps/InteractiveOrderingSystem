@@ -15,7 +15,7 @@ import ru.nstu.ordsys.component.ui.animation.showWithFade
 import ru.nstu.ordsys.component.ui.dialog.showCustomDialog
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
 import ru.nstu.ordsys.component.ui.recyclerview.setDivider
-import ru.nstu.ordsys.features.dishes.menu.R
+import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListFragmentBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
 import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
@@ -26,7 +26,7 @@ import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 
-class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dishes_list_fragment),
+class DishesListFragment : BaseFragment<DishesListFragmentBinding>(ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_list_fragment),
     OperationResultDialogFragment.OperationResultDialogFragmentListener {
 
     companion object {
@@ -37,6 +37,7 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
     private val viewModel: DishesListViewModel by viewModel()
 
     private lateinit var menuAdapter: DishesListAdapter
+
     private lateinit var listAdapter: ArrayAdapter<String>
 
     override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
@@ -45,7 +46,7 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tableNumber.text = getString(R.string.table_number, 15)
+        binding.tableNumber.text = getString(ru.nstu.ordsys.component.resources.R.string.table_number, 15)
 
         bindAdapters()
         setListeners()
@@ -57,7 +58,7 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
 
             listAdapter = ArrayAdapter(
                 requireContext(),
-                R.layout.dishes_category_tab,
+                ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_category_tab,
                 resources.getStringArray(R.array.category_name)
             )
             menuTabs.adapter = listAdapter
@@ -83,7 +84,7 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
             dishesList.adapter = menuAdapter
 
             dishesList.layoutManager = GridLayoutManager(context, 3)
-            dishesList.setDivider(ru.nstu.ordsys.component.resources.R.drawable.recycler_view_divider)
+            dishesList.setDivider(R.drawable.recycler_view_divider)
 
             menuTabs.setItemChecked(0, true)
             viewModel.getRollsMenu()
@@ -107,7 +108,7 @@ class DishesListFragment : BaseFragment<DishesListFragmentBinding>(R.layout.dish
                 showCustomDialog(dialog)
             }
             orderButton.setOnClickListener {
-
+                viewModel.navigateToOrderListScreen()
             }
             billButton.setOnClickListener {
 

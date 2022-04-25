@@ -143,6 +143,10 @@ class DishesListViewModel(
             .addToDisposableList()
     }
 
+    fun navigateToOrderListScreen(){
+        router.navigateToOrderListScreen()
+    }
+
 //    fun navigateExit() {
 //        router.exit()
 //    }

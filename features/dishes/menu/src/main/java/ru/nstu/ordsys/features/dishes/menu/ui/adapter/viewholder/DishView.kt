@@ -3,9 +3,10 @@ package ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
+import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.component.ui.animation.hideWithFade
 import ru.nstu.ordsys.component.ui.animation.showWithFade
-import ru.nstu.ordsys.features.dishes.menu.R
+import ru.nstu.ordsys.component.ui.fragment.BaseView
 import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListItemBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishViewModel
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
@@ -16,7 +17,7 @@ class DishView(
 ) : BaseView(parent.context) {
 
     init {
-        inflate(context, R.layout.dishes_list_item, this)
+        inflate(context, ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_list_item, this)
     }
 
     private val binding = DishesListItemBinding.bind(this)
@@ -45,8 +46,8 @@ class DishView(
                 Picasso
                     .get()
                     .load(imageUrl)
-                    .placeholder(ru.nstu.ordsys.component.resources.R.drawable.ic_loading)
-                    .error(ru.nstu.ordsys.component.resources.R.drawable.ic_image_not_supported)
+                    .placeholder(R.drawable.ic_loading)
+                    .error(R.drawable.ic_image_not_supported)
                     .into(dishImage)
             }
         }
@@ -66,25 +67,24 @@ class DishView(
         }
     }
 
-    private fun setObservers(){
+    private fun setObservers() {
         dishViewModel.count.observe(this, ::changeDishCount)
     }
 
-    private fun changeDishCount(count: Int){
-        if (count > 0){
+    private fun changeDishCount(count: Int) {
+        if (count > 0) {
             showCountPicker()
             binding.count.text = count.toString()
-        }
-        else
+        } else
             hideCountPicker()
     }
 
-    private fun showCountPicker(){
+    private fun showCountPicker() {
         binding.addToCartButton.hideWithFade()
         binding.countPicker.showWithFade()
     }
 
-    private fun hideCountPicker(){
+    private fun hideCountPicker() {
         binding.addToCartButton.showWithFade()
         binding.countPicker.hideWithFade()
     }

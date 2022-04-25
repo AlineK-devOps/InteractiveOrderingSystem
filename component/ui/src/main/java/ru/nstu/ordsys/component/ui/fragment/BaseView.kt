@@ -1,4 +1,4 @@
-package ru.nstu.ordsys.features.dishes.menu.ui.adapter.viewholder
+package ru.nstu.ordsys.component.ui.fragment
 
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -18,11 +18,7 @@ abstract class BaseView(context: Context) : ConstraintLayout(context), Lifecycle
 
     private var registry: LifecycleRegistry? = null
 
-    internal var viewModel: BaseViewModel? = null
-
-    fun setViewModel(viewModel: BaseViewModel) {
-        this.viewModel = viewModel
-    }
+    var viewModel: BaseViewModel? = null
 
     override fun getLifecycle(): Lifecycle = registry ?: throw IllegalStateException("Lifecycle registry has not been initialized yet.")
 
