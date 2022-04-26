@@ -122,7 +122,7 @@ class OrderListFragment :
     private fun renderLoadingState() {
         with(binding) {
             progressBar.showWithFade()
-            orderList.hideWithFade()
+            orderScrollView.hideWithFade()
             emptyOrderHint.hideWithFade()
         }
     }
@@ -154,6 +154,7 @@ class OrderListFragment :
 
     private fun totalPriceChanged(price: Int) {
         binding.menuHintTotalPrice.text = getString(R.string.price_format, price)
+        binding.totalPrice.text = getString(R.string.price_format, price)
     }
 
     private fun showToast(textId: Int) {
@@ -167,7 +168,7 @@ class OrderListFragment :
     private fun showOrderList() {
         with(binding) {
             progressBar.hideWithFade()
-            orderList.showWithFade()
+            orderScrollView.showWithFade()
             emptyOrderHint.hideWithFade()
             sendOrderButton.showWithFade()
             clearCartButton.showWithFade()
@@ -177,7 +178,7 @@ class OrderListFragment :
     private fun showEmptyOrderHint() {
         with(binding) {
             progressBar.hideWithFade()
-            orderList.hideWithFade()
+            orderScrollView.hideWithFade()
             emptyOrderHint.showWithFade()
             sendOrderButton.hideWithFade()
             clearCartButton.hideWithFade()

@@ -17,6 +17,7 @@
 	<string name="empty_order_hint">В корзине пусто\nДобавьте понравившееся блюдо из меню</string>
 	<string name="send_order_button_text">Отправить заказ</string>
 	<string name="clear_cart_button_text">Очистить корзину</string>
+	<string name="total_price">Итого:</string>
 
 	<string-array name="category_name">
 		<item>Роллы</item>
