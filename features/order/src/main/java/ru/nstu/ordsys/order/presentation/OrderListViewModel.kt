@@ -46,4 +46,8 @@ class OrderListViewModel(
     fun navigateToDishesListScreen(position: Int) {
         router.navigateToDishesListScreen(position)
     }
+
+    fun navigateToBillListScreen(){
+        router.navigateToBillListScreen()
+    }
 }

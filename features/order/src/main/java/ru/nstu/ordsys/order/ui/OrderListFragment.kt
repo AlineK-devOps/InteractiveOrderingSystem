@@ -93,7 +93,7 @@ class OrderListFragment :
                 showCustomDialog(dialog)
             }
             billButton.setOnClickListener {
-
+                viewModel.navigateToBillListScreen()
             }
             clearCartButton.setOnClickListener {
                 viewModel.clearCart()

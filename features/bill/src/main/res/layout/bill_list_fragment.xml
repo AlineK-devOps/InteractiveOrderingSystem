@@ -135,11 +135,11 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/order_title"
+        android:id="@+id/bill_title"
         style="@style/Theme.InteractiveOrderingSystem.MenuTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/your_order"
+        android:text="@string/your_bill"
         android:padding="@dimen/padding_15"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
         app:layout_constraintTop_toBottomOf="@id/menu_toolbar" />
@@ -149,21 +149,59 @@
         android:layout_height="@dimen/size_2"
         android:background="@color/white_gray"
         android:layout_marginEnd="@dimen/margin_15"
-        app:layout_constraintStart_toEndOf="@id/order_title"
+        app:layout_constraintStart_toEndOf="@id/bill_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
-        app:layout_constraintBottom_toBottomOf="@id/order_title"/>
+        app:layout_constraintBottom_toBottomOf="@id/bill_title"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/order_list"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bill_scroll_view"
         android:layout_width="@dimen/size_0"
         android:layout_height="@dimen/size_0"
-        android:layout_marginHorizontal="@dimen/margin_15"
         android:background="@color/white_gray"
-        app:layout_constraintTop_toBottomOf="@id/order_title"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        app:layout_constraintTop_toBottomOf="@id/bill_title"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bill_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/padding_30"
+                android:paddingTop="@dimen/padding_15"
+                android:paddingBottom="@dimen/padding_90"
+                android:text="@string/total_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bill_list"
+                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/padding_30"
+                android:paddingTop="@dimen/padding_15"
+                android:paddingBottom="@dimen/padding_90"
+                android:text="@string/price_format"
+                app:layout_constraintTop_toBottomOf="@id/bill_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -176,10 +214,10 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
-        android:id="@+id/empty_order_hint"
+        android:id="@+id/empty_bill_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/empty_order_hint"
+        android:text="@string/empty_bill_hint"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
         app:layout_constraintStart_toEndOf="@id/menu_tabs_background"
@@ -188,10 +226,10 @@
         style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/clear_cart_button"
+        android:id="@+id/cash_pay_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/clear_cart_button_text"
+        android:text="@string/cash_pay_button_text"
         android:textColor="@color/dark_gray"
         android:background="@color/light_gray"
         android:paddingVertical="@dimen/padding_15"
@@ -199,14 +237,14 @@
         android:layout_marginVertical="@dimen/margin_15"
         android:layout_marginHorizontal="@dimen/margin_30"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/send_order_button"
+        app:layout_constraintEnd_toStartOf="@id/card_pay_button"
         style="@style/Theme.InteractiveOrderingSystem.DialogText"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/send_order_button"
+        android:id="@+id/card_pay_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send_order_button_text"
+        android:text="@string/card_pay_button_text"
         android:textColor="@color/white_gray"
         android:background="@color/orange"
         android:paddingVertical="@dimen/padding_15"

@@ -147,7 +147,7 @@ class DishesListViewModel(
         router.navigateToOrderListScreen()
     }
 
-//    fun navigateExit() {
-//        router.exit()
-//    }
+    fun navigateToBillListScreen(){
+        router.navigateToBillListScreen()
+    }
 }

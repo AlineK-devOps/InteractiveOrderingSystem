@@ -10,12 +10,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.component.ui.animation.hideWithFade
 import ru.nstu.ordsys.component.ui.animation.showWithFade
 import ru.nstu.ordsys.component.ui.dialog.showCustomDialog
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
 import ru.nstu.ordsys.component.ui.recyclerview.setDivider
-import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.features.dishes.menu.databinding.DishesListFragmentBinding
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
 import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
@@ -26,8 +26,8 @@ import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 
-class DishesListFragment(val position: Int)
-    : BaseFragment<DishesListFragmentBinding>(ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_list_fragment),
+class DishesListFragment(val position: Int) :
+    BaseFragment<DishesListFragmentBinding>(ru.nstu.ordsys.features.dishes.menu.R.layout.dishes_list_fragment),
     OperationResultDialogFragment.OperationResultDialogFragmentListener {
 
     companion object {
@@ -47,7 +47,8 @@ class DishesListFragment(val position: Int)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tableNumber.text = getString(ru.nstu.ordsys.component.resources.R.string.table_number, 15)
+        binding.tableNumber.text =
+            getString(ru.nstu.ordsys.component.resources.R.string.table_number, 15)
 
         bindAdapters()
         setListeners()
@@ -121,7 +122,7 @@ class DishesListFragment(val position: Int)
                 viewModel.navigateToOrderListScreen()
             }
             billButton.setOnClickListener {
-
+                viewModel.navigateToBillListScreen()
             }
         }
     }
@@ -171,7 +172,7 @@ class DishesListFragment(val position: Int)
         binding.totalPrice.text = getString(R.string.price_format, price)
     }
 
-    private fun showToast(textId: Int){
+    private fun showToast(textId: Int) {
         val toast: Toast = Toast.makeText(context, textId, Toast.LENGTH_LONG)
         val toastLayout = toast.view as LinearLayout?
         val toastTV = toastLayout!!.getChildAt(0) as TextView
@@ -180,7 +181,7 @@ class DishesListFragment(val position: Int)
     }
 
     override fun onDialogCloseResult(requestCode: Int) {
-        when (requestCode){
+        when (requestCode) {
             OperationResultDialogFragment.DialogCloseResults.ACTION.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
         }
     }

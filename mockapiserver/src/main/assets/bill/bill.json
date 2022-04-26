@@ -1,0 +1,88 @@
+{
+  "bill": [
+    {
+      "dish": {
+        "id": 56,
+        "category": "ROLL",
+        "name": "Калифорния с крабом",
+        "composition": "снежный краб, огурец, сливочный сыр, икра масаго",
+        "price": 240,
+        "weight": 245,
+        "imageUrl": "https://i.postimg.cc/yNhn80Kv/filadelfiya-miks-1631768173640.jpg"
+      },
+      "count": 1
+    },
+    {
+      "dish": {
+        "id": 57,
+        "category": "ROLL",
+        "name": "Филадельфия классика",
+        "composition": "Большой ролл, в котором много лосося вокруг и огурец со сливочным сыром в начинке. Настоящая классика.",
+        "price": 580,
+        "weight": 325,
+        "imageUrl": "https://i.postimg.cc/yNhn80Kv/filadelfiya-miks-1631768173640.jpg"
+      },
+      "count": 3
+    },
+    {
+      "dish": {
+        "id": 58,
+        "category": "ROLL",
+        "name": "Москва",
+        "composition": "Серьёзный ролл с угрём, лососем и сливочным сыром под нежной шапкой из соуса Яки и красной лососевой икры",
+        "price": 590,
+        "weight": 295,
+        "imageUrl": "https://i.postimg.cc/yNhn80Kv/filadelfiya-miks-1631768173640.jpg"
+      },
+      "count": 4
+    },
+    {
+      "dish": {
+        "id": 81,
+        "category": "SNACK",
+        "name": "Картофель фри",
+        "composition": "Картофель фри с солью + 1 сырный соус в подарок",
+        "price": 175,
+        "weight": 170,
+        "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tokyo-city.ru%2Fspisok-product%2FZapechennye.html&psig=AOvVaw2NdE_OtL20IgAbGaPtlcZQ&ust=1650040623501000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCODw4sX-k_cCFQAAAAAdAAAAABAn"
+      },
+      "count": 3
+    },
+    {
+      "dish": {
+        "id": 123,
+        "category": "ADDITIONALLY",
+        "name": "Соевый соус",
+        "composition": "Соевый соус средней солёности",
+        "price": 30,
+        "weight": 50,
+        "imageUrl": "https://i.postimg.cc/yNhn80Kv/filadelfiya-miks-1631768173640.jpg"
+      },
+      "count": 2
+    },
+    {
+      "dish": {
+        "id": 124,
+        "category": "ADDITIONALLY",
+        "name": "Васаби",
+        "composition": "Классическая японская добавка с сильным вкусом и ароматом",
+        "price": 30,
+        "weight": 50,
+        "imageUrl": "https://i.postimg.cc/yNhn80Kv/filadelfiya-miks-1631768173640.jpg"
+      },
+      "count": 1
+    },
+    {
+      "dish": {
+        "id": 125,
+        "category": "ADDITIONALLY",
+        "name": "Имбирь",
+        "composition": "Маринованный имбирь",
+        "price": 30,
+        "weight": 50,
+        "imageUrl": "https://i.postimg.cc/yNhn80Kv/filadelfiya-miks-1631768173640.jpg"
+      },
+      "count": 2
+    }
+  ]
+}

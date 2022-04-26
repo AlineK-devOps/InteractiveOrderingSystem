@@ -76,6 +76,13 @@ internal fun getFake(context: Context, uri: Uri, response: Response.Builder): Re
             )
         }
 
+        "/api/bill/15"               -> {
+            response.createResponse(
+                description = context.readFileFromAssets(BillListAsset.billListAsset),
+                body = context.readFileFromAssets(BillListAsset.billListAsset)
+            )
+        }
+
         else                                     -> {
             error404(response)
         }
