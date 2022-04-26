@@ -87,7 +87,7 @@ class BillListFragment :
                         messageId = R.string.waiter_calling_confirmation,
                         actionButtonTextId = R.string.call_button_text,
                         closeButtonTextId = R.string.cancel_button_text,
-                        actionRequestCode = OperationResultDialogFragment.DialogCloseResults.ACTION.code,
+                        actionRequestCode = BillListRequestCode.CALL_WAITER_REQUEST_CODE.code,
                         closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
                     )
                 showCustomDialog(dialog)
@@ -180,7 +180,7 @@ class BillListFragment :
 
     override fun onDialogCloseResult(requestCode: Int) {
         when (requestCode) {
-            OperationResultDialogFragment.DialogCloseResults.ACTION.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            BillListRequestCode.CALL_WAITER_REQUEST_CODE.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
         }
     }
 }

@@ -110,10 +110,10 @@ class DishesListFragment(val position: Int) :
                 val dialog =
                     OperationResultDialogFragment.newInstance(
                         operationType = DialogOperationType.OPERATION_QUESTION,
-                        messageId = ru.nstu.ordsys.component.resources.R.string.waiter_calling_confirmation,
+                        messageId = R.string.waiter_calling_confirmation,
                         actionButtonTextId = ru.nstu.ordsys.component.resources.R.string.call_button_text,
                         closeButtonTextId = ru.nstu.ordsys.component.resources.R.string.cancel_button_text,
-                        actionRequestCode = OperationResultDialogFragment.DialogCloseResults.ACTION.code,
+                        actionRequestCode = DishesListRequestCode.CALL_WAITER_REQUEST_CODE.code,
                         closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
                     )
                 showCustomDialog(dialog)
@@ -182,7 +182,7 @@ class DishesListFragment(val position: Int) :
 
     override fun onDialogCloseResult(requestCode: Int) {
         when (requestCode) {
-            OperationResultDialogFragment.DialogCloseResults.ACTION.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            DishesListRequestCode.CALL_WAITER_REQUEST_CODE.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
         }
     }
 }

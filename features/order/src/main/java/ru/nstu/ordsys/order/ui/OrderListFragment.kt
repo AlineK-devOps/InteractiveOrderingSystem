@@ -87,7 +87,7 @@ class OrderListFragment :
                         messageId = R.string.waiter_calling_confirmation,
                         actionButtonTextId = R.string.call_button_text,
                         closeButtonTextId = R.string.cancel_button_text,
-                        actionRequestCode = OperationResultDialogFragment.DialogCloseResults.ACTION.code,
+                        actionRequestCode = OrderListRequestCode.CALL_WAITER_REQUEST_CODE.code,
                         closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
                     )
                 showCustomDialog(dialog)
@@ -96,10 +96,30 @@ class OrderListFragment :
                 viewModel.navigateToBillListScreen()
             }
             clearCartButton.setOnClickListener {
-                viewModel.clearCart()
+
+                val dialog =
+                    OperationResultDialogFragment.newInstance(
+                        operationType = DialogOperationType.OPERATION_QUESTION,
+                        messageId = R.string.clear_cart_confirmation,
+                        actionButtonTextId = R.string.yes_button_text,
+                        closeButtonTextId = R.string.no_button_text,
+                        actionRequestCode = OrderListRequestCode.CLEAR_CART_REQUEST_CODE.code,
+                        closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
+                    )
+                showCustomDialog(dialog)
             }
             sendOrderButton.setOnClickListener {
-                viewModel.sendOrder()
+
+                val dialog =
+                    OperationResultDialogFragment.newInstance(
+                        operationType = DialogOperationType.OPERATION_QUESTION,
+                        messageId = R.string.send_order_confirmation,
+                        actionButtonTextId = R.string.yes_button_text,
+                        closeButtonTextId = R.string.no_button_text,
+                        actionRequestCode = OrderListRequestCode.SEND_ORDER_REQUEST_CODE.code,
+                        closeRequestCode = OperationResultDialogFragment.DialogCloseResults.CLOSE.code
+                    )
+                showCustomDialog(dialog)
             }
         }
     }
@@ -187,7 +207,9 @@ class OrderListFragment :
 
     override fun onDialogCloseResult(requestCode: Int) {
         when (requestCode) {
-            OperationResultDialogFragment.DialogCloseResults.ACTION.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            OrderListRequestCode.CALL_WAITER_REQUEST_CODE.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            OrderListRequestCode.CLEAR_CART_REQUEST_CODE.code -> viewModel.clearCart()
+            OrderListRequestCode.SEND_ORDER_REQUEST_CODE.code -> viewModel.sendOrder()
         }
     }
 }

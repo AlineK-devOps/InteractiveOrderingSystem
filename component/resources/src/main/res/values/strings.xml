@@ -23,6 +23,10 @@
 	<string name="total_price">Итого:</string>
 	<string name="cash_pay_button_text">Оплата наличными</string>
 	<string name="card_pay_button_text">Оплата по карте</string>
+	<string name="clear_cart_confirmation">Вы уверены, что хотите\n очистить корзину?</string>
+	<string name="send_order_confirmation">Вы уверены, что хотите\n отправить заказ?</string>
+	<string name="yes_button_text">Да</string>
+	<string name="no_button_text">Нет</string>
 
 	<string-array name="category_name">
 		<item>Роллы</item>
