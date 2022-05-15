@@ -10,11 +10,12 @@ import ru.nstu.ordsys.features.dishes.menu.domain.repository.DishesListRepositor
 import ru.nstu.ordsys.features.dishes.menu.domain.usecase.*
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListViewModel
 import ru.nstu.ordsys.mockapiserver.changer.MOCK
+import ru.nstu.ordsys.mockapiserver.changer.ORIGINAL
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
 import ru.nstu.ordsys.mockapiserver.retrofit.createRetrofitService
 
 val dishesListModule = module {
-    factory { createRetrofitService<DishesListApi>(getRetrofit(MOCK)) }
+    factory { createRetrofitService<DishesListApi>(getRetrofit(ORIGINAL)) }
 
     factory<DishesListDatasource> { DishesListDatasourceImpl(get()) }
 

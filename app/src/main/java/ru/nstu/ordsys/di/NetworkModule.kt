@@ -33,7 +33,7 @@ val networkModule = module {
     single(named(ORIGINAL)) {
         provideRetrofit(
             okHttpClient = get(named(ORIGINAL)),
-            url = "нужен бэк спасите"
+            url = "http://10.0.2.2:8080"
         )
     }
     single(named(MOCK)) {

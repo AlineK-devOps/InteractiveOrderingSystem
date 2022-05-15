@@ -8,6 +8,7 @@ import ru.nstu.ordsys.component.ui.mvvm.BaseViewModel
 import ru.nstu.ordsys.features.dishes.menu.domain.usecase.*
 import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
 
+
 class DishesListViewModel(
     private val getAdditionallyMenuUseCase: GetAdditionallyMenuUseCase,
     private val getDrinksMenuUseCase: GetDrinksMenuUseCase,
@@ -25,122 +26,186 @@ class DishesListViewModel(
 
     fun getRollsMenu() {
         _state.value = DishesListState.Loading
-        getRollsMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getRollsMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getHotRollsMenu() {
         _state.value = DishesListState.Loading
-        getHotRollsMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getHotRollsMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getSushiMenu() {
         _state.value = DishesListState.Loading
-        getSushiMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getSushiMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getSnacksMenu() {
         _state.value = DishesListState.Loading
-        getSnacksMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getSnacksMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getWokMenu() {
         _state.value = DishesListState.Loading
-        getWokMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getWokMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getSoupsMenu() {
         _state.value = DishesListState.Loading
-        getSoupsMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getSoupsMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getDrinksMenu() {
         _state.value = DishesListState.Loading
-        getDrinksMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getDrinksMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun getAdditionallyMenu() {
         _state.value = DishesListState.Loading
-        getAdditionallyMenuUseCase()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { vacations ->
-                    _state.value = DishesListState.Content(vacations)
-                },
-                onError = {
-                    _state.value = DishesListState.Error
-                }
-            )
-            .addToDisposableList()
+
+        val thread = Thread {
+            try {
+                getAdditionallyMenuUseCase()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onSuccess = { dishes ->
+                            _state.value = DishesListState.Content(dishes)
+                        },
+                        onError = {
+                            _state.value = DishesListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun navigateToOrderListScreen(){
