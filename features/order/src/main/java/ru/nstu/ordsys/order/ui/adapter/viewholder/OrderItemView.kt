@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.ViewGroup
 import ru.nstu.ordsys.component.ui.fragment.BaseView
 import ru.nstu.ordsys.component.resources.R
-import ru.nstu.ordsys.order.databinding.OrderItemViewBinding
+import ru.nstu.ordsys.features.order.databinding.OrderItemViewBinding
 import ru.nstu.ordsys.order.presentation.OrderItemViewModel
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
@@ -14,7 +14,7 @@ class OrderItemView(
 ) : BaseView(parent.context) {
 
     init {
-        inflate(context, ru.nstu.ordsys.order.R.layout.order_item_view, this)
+        inflate(context, ru.nstu.ordsys.features.order.R.layout.order_item_view, this)
     }
 
     private val binding = OrderItemViewBinding.bind(this)

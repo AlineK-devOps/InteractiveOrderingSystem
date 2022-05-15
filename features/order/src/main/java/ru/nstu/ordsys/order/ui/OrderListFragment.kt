@@ -16,9 +16,9 @@ import ru.nstu.ordsys.component.ui.animation.showWithFade
 import ru.nstu.ordsys.component.ui.dialog.showCustomDialog
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
 import ru.nstu.ordsys.component.ui.recyclerview.setDivider
+import ru.nstu.ordsys.features.order.databinding.OrderListFragmentBinding
 import ru.nstu.ordsys.operation.ui.DialogOperationType
 import ru.nstu.ordsys.operation.ui.OperationResultDialogFragment
-import ru.nstu.ordsys.order.databinding.OrderListFragmentBinding
 import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.order.presentation.OrderListViewModel
 import ru.nstu.ordsys.order.presentation.state.OrderListState
@@ -26,7 +26,7 @@ import ru.nstu.ordsys.order.ui.adapter.OrderListAdapter
 import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 class OrderListFragment :
-    BaseFragment<OrderListFragmentBinding>(ru.nstu.ordsys.order.R.layout.order_list_fragment),
+    BaseFragment<OrderListFragmentBinding>(ru.nstu.ordsys.features.order.R.layout.order_list_fragment),
     OperationResultDialogFragment.OperationResultDialogFragmentListener {
 
     companion object {
