@@ -3,6 +3,7 @@ package ru.nstu.ordsys.order.di
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import ru.nstu.ordsys.mockapiserver.changer.MOCK
+import ru.nstu.ordsys.mockapiserver.changer.ORIGINAL
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
 import ru.nstu.ordsys.mockapiserver.retrofit.createRetrofitService
 import ru.nstu.ordsys.order.data.api.OrderListApi
@@ -14,7 +15,7 @@ import ru.nstu.ordsys.order.domain.usecase.PostOrderListUseCase
 import ru.nstu.ordsys.order.presentation.OrderListViewModel
 
 val orderListModule = module {
-    factory { createRetrofitService<OrderListApi>(getRetrofit(MOCK)) }
+    factory { createRetrofitService<OrderListApi>(getRetrofit(ORIGINAL)) }
     factory<OrderListDataSource> { OrderListDataSourceImpl(get()) }
     factory<OrderListRepository> { OrderListRepositoryImpl(get()) }
     factory { PostOrderListUseCase(get()) }

@@ -6,6 +6,6 @@ import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 fun HashMap<Dish, Int>.toModel(): OrderListModel =
     OrderListModel(
-        15,
+        5,
         map { orderItem -> OrderItemModel(orderItem.key.id, orderItem.value) }
     )

@@ -7,6 +7,6 @@ import ru.nstu.ordsys.order.data.model.OrderListModel
 
 interface OrderListApi {
 
-    @POST("/api/order/")
+    @POST("/api/order")
     fun postOrderList(@Body orderModel: OrderListModel): Completable
 }

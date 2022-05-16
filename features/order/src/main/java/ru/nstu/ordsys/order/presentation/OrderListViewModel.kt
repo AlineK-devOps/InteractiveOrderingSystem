@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import ru.nstu.ordsys.component.ui.mvvm.BaseViewModel
+import ru.nstu.ordsys.features.dishes.menu.presentation.state.DishesListState
 import ru.nstu.ordsys.order.domain.entity.Order
 import ru.nstu.ordsys.order.domain.usecase.PostOrderListUseCase
 import ru.nstu.ordsys.order.presentation.state.OrderListState
@@ -20,19 +21,26 @@ class OrderListViewModel(
     fun sendOrder() {
         _state.value = OrderListState.Loading
 
-        useCase(Order.order)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onComplete = {
-                    //_state.value = OrderListState.SendOperationSuccess
-                    clearCart()
-                    loadOrderList()
-                },
-                onError = {
-                    _state.value = OrderListState.Error
-                }
-            )
-            .addToDisposableList()
+        val thread = Thread {
+            try {
+                useCase(Order.order)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                        onComplete = {
+                            //_state.value = OrderListState.SendOperationSuccess
+                            clearCart()
+                            loadOrderList()
+                        },
+                        onError = {
+                            _state.value = OrderListState.Error
+                        }
+                    )
+                    .addToDisposableList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        thread.start()
     }
 
     fun loadOrderList() {
