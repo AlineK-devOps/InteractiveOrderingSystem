@@ -15,3 +15,5 @@ include ':features:order'
 include ':features:bill'
 
 rootProject.name = "Интерактивная система заказов"
+include ':features:cook'
+include ':features:cook:orderlist'

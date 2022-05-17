@@ -10,6 +10,9 @@
 	<color name="gray">#D5D1C9</color>
 	<color name="dark_gray">#616161</color>
 	<color name="orange">#E29A49</color>
+	<color name="green">#73D15A</color>
+	<color name="red">#D34141</color>
+	<color name="blue">#375ADA</color>
 	<color name="teal_200">#FF03DAC5</color>
 	<color name="teal_700">#FF018786</color>
 </resources>
