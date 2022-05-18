@@ -22,6 +22,8 @@ class CookOrderListViewModel(
     private var _state = MutableLiveData<CookOrderListState>(CookOrderListState.Initial)
     val state: LiveData<CookOrderListState> = _state
 
+    private var selectedTab: String = "ALL"
+
     fun getOrders() {
         _state.value = CookOrderListState.Loading
 
@@ -126,7 +128,20 @@ class CookOrderListViewModel(
         thread.start()
     }
 
-    fun navigateToDishTechnologyScreen() {
-        router.navigateToDishTechnologyScreen()
+    fun updateTab(tab: String) {
+        selectedTab = tab
+    }
+
+    fun updateOrders() {
+        when (selectedTab) {
+            "ALL" -> getOrders()
+            "HOT_WORKSHOP" -> getHotWorkshopOrders()
+            "COLD_WORKSHOP" -> getColdWorkshopOrders()
+            "BAR" -> getBarOrders()
+        }
+    }
+
+    fun navigateToSettingsScreen() {
+        router.navigateToSettingsScreen()
     }
 }

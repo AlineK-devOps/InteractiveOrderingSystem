@@ -8,6 +8,8 @@
 	<string name="table_number">Столик %d</string>
 	<string name="bill_button_text">Счёт</string>
 	<string name="order_button_text">Ваш заказ</string>
+	<string name="update_button_text">Обновить</string>
+	<string name="settings_button_text">Настройки</string>
 	<string name="waiter_calling_button_text">Вызов официанта</string>
 	<string name="dish_name_format">%s (%d гр.)</string>
 	<string name="bill_dish_name_format">%s (%d шт.)</string>
@@ -17,6 +19,7 @@
 	<string name="empty_text"> </string>
 	<string name="dialog_empty_warning_text">Приносим извинения,\nдиалоговое сообщение куда-то пропало</string>
 	<string name="empty_order_hint">В корзине пусто\nДобавьте понравившееся блюдо из меню</string>
+	<string name="empty_orders_list_hint">Заказов нет</string>
 	<string name="empty_bill_hint">В чеке пусто\nДобавьте понравившееся блюдо из меню</string>
 	<string name="send_order_button_text">Отправить заказ</string>
 	<string name="clear_cart_button_text">Очистить корзину</string>
@@ -27,6 +30,13 @@
 	<string name="send_order_confirmation">Вы уверены, что хотите\n отправить заказ?</string>
 	<string name="yes_button_text">Да</string>
 	<string name="no_button_text">Нет</string>
+	<string name="all_button_text">Все</string>
+	<string name="hot_workshop_button_text">Горячий цех</string>
+	<string name="cold_workshop_button_text">Холодный цех</string>
+	<string name="bar_button_text">Бар</string>
+	<string name="cooking_status_format">Готовит %s</string>
+	<string name="start_cook_button">Начать готовить</string>
+	<string name="end_cook_button">Завершить готовку</string>
 
 	<string-array name="category_name">
 		<item>Роллы</item>
