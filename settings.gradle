@@ -10,10 +10,11 @@ include ':shared:dishes'
 include ':shared:order'
 include ':shared:operation'
 include ':shared:waiter'
+include ':shared:user'
 
 include ':features:order'
 include ':features:bill'
-
-rootProject.name = "Интерактивная система заказов"
 include ':features:cook'
 include ':features:cook:orderlist'
+
+rootProject.name = "Интерактивная система заказов"

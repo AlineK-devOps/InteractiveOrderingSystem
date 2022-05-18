@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+        style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dishes_list"

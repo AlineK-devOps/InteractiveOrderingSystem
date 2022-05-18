@@ -5,17 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.nstu.ordsys.component.resources.R
 import ru.nstu.ordsys.component.ui.animation.hideWithFade
 import ru.nstu.ordsys.component.ui.animation.showWithFade
 import ru.nstu.ordsys.component.ui.fragment.BaseFragment
-import ru.nstu.ordsys.component.ui.recyclerview.setDivider
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.nstu.ordsys.features.cook.orderlist.databinding.CookOrderListFragmentBinding
 import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderListForCook
+import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.PostDishStatusUseCase
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderListViewModel
 import ru.nstu.ordsys.features.cook.orderlist.presentation.state.CookOrderListState
 import ru.nstu.ordsys.features.cook.orderlist.ui.adapter.CookOrderListAdapter
+import ru.nstu.ordsys.shared.user.entity.User
 
 class CookOrderListFragment :
     BaseFragment<CookOrderListFragmentBinding>(ru.nstu.ordsys.features.cook.orderlist.R.layout.cook_order_list_fragment) {
@@ -25,6 +27,7 @@ class CookOrderListFragment :
         fun newInstance() = CookOrderListFragment()
     }
 
+    private val useCase: PostDishStatusUseCase by inject()
     private val viewModel: CookOrderListViewModel by viewModel()
 
     private lateinit var ordersAdapter: CookOrderListAdapter
@@ -39,13 +42,15 @@ class CookOrderListFragment :
         setListeners()
         setObservers()
 
+        binding.userName.text = User.getName()
+
         viewModel.getOrders()
         binding.allButton.setBackgroundColor(resources.getColor(R.color.orange))
     }
 
     private fun bindAdapters() {
         with(binding) {
-            ordersAdapter = CookOrderListAdapter()
+            ordersAdapter = CookOrderListAdapter(useCase)
             ordersList.adapter = ordersAdapter
 
             ordersList.layoutManager = GridLayoutManager(context, 2)
@@ -87,8 +92,8 @@ class CookOrderListFragment :
         }
     }
 
-    private fun offTabs(){
-        with(binding){
+    private fun offTabs() {
+        with(binding) {
             allButton.setBackgroundColor(resources.getColor(R.color.blue_gray))
             hotWorkshopButton.setBackgroundColor(resources.getColor(R.color.blue_gray))
             coldWorkshopButton.setBackgroundColor(resources.getColor(R.color.blue_gray))

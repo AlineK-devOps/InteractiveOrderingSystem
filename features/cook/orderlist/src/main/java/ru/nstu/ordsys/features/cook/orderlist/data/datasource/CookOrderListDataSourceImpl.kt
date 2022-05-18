@@ -1,7 +1,9 @@
 package ru.nstu.ordsys.features.cook.orderlist.data.datasource
 
+import io.reactivex.Completable
 import io.reactivex.Single
 import ru.nstu.ordsys.features.cook.orderlist.data.api.CookOrderListApi
+import ru.nstu.ordsys.features.cook.orderlist.data.model.OrderItemForUpdateModel
 import ru.nstu.ordsys.features.cook.orderlist.data.model.OrderListForCookModel
 
 class CookOrderListDataSourceImpl(private val api: CookOrderListApi) : CookOrderListDataSource  {
@@ -17,4 +19,7 @@ class CookOrderListDataSourceImpl(private val api: CookOrderListApi) : CookOrder
 
     override fun getBarOrders(): Single<List<OrderListForCookModel>> =
         api.getBarOrders()
+
+    override fun postDishStatus(itemUpdate: OrderItemForUpdateModel): Completable =
+        api.postDishStatus(itemUpdate)
 }

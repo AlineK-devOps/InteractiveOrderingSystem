@@ -25,10 +25,11 @@
         android:layout_marginHorizontal="@dimen/margin_15"
         android:textColor="@color/blue"
         android:visibility="gone"
+        android:fontFamily="@font/roboto_black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/dish_time_cooking"
-        style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+        style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/start_cook_button"
@@ -39,10 +40,11 @@
         android:layout_marginHorizontal="@dimen/margin_15"
         android:background="@color/white_gray"
         android:textColor="@color/orange"
+        android:fontFamily="@font/roboto_black"
         app:layout_constraintEnd_toStartOf="@id/dish_time_cooking"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+        style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/end_cook_button"
@@ -52,25 +54,26 @@
         android:paddingHorizontal="@dimen/padding_20"
         android:layout_marginHorizontal="@dimen/margin_15"
         android:background="@color/white_gray"
+        android:fontFamily="@font/roboto_black"
         android:textColor="@color/green"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@id/dish_time_cooking"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+        style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
 
-    <TextView
+    <Chronometer
         android:id="@+id/dish_time_cooking"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:padding="@dimen/padding_20"
-        android:text="@string/stub"
+        android:fontFamily="@font/roboto_black"
         android:textColor="@color/white_gray"
         android:background="@color/green"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+        style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

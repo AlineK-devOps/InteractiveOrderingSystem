@@ -7,10 +7,7 @@ import ru.nstu.ordsys.features.cook.orderlist.data.datasource.CookOrderListDataS
 import ru.nstu.ordsys.features.cook.orderlist.data.datasource.CookOrderListDataSourceImpl
 import ru.nstu.ordsys.features.cook.orderlist.data.repository.CookOrderListRepositoryImpl
 import ru.nstu.ordsys.features.cook.orderlist.domain.repository.CookOrderListRepository
-import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.GetBarOrdersUseCase
-import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.GetColdWorkshopOrdersUseCase
-import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.GetHotWorkshopOrdersUseCase
-import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.GetOrdersUseCase
+import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.*
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderListViewModel
 import ru.nstu.ordsys.mockapiserver.changer.ORIGINAL
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
@@ -27,6 +24,7 @@ val cookOrderListModule = module {
     factory { GetHotWorkshopOrdersUseCase(get()) }
     factory { GetColdWorkshopOrdersUseCase(get()) }
     factory { GetBarOrdersUseCase(get()) }
+    factory { PostDishStatusUseCase(get()) }
 
     viewModel {
         CookOrderListViewModel(

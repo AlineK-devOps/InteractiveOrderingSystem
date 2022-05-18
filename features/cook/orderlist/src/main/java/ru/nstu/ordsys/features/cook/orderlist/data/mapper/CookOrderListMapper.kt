@@ -23,8 +23,11 @@ fun List<OrderItemForCookModel>.convertToEntity(): List<OrderItemForCook> =
 
 fun OrderItemForCookModel.toEntity(): OrderItemForCook =
     OrderItemForCook(
+        id,
         dish.toEntity(),
-        convertStatus(status)
+        convertStatus(status),
+        orderTime,
+        cook
     )
 
 fun DishForCookModel.toEntity(): DishForCook =

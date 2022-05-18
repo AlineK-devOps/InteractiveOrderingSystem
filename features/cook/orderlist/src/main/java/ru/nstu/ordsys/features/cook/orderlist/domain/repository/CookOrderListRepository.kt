@@ -1,6 +1,8 @@
 package ru.nstu.ordsys.features.cook.orderlist.domain.repository
 
+import io.reactivex.Completable
 import io.reactivex.Single
+import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderItemForUpdate
 import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderListForCook
 
 interface CookOrderListRepository {
@@ -12,4 +14,6 @@ interface CookOrderListRepository {
     fun getColdWorkshopOrders(): Single<List<OrderListForCook>>
 
     fun getBarOrders(): Single<List<OrderListForCook>>
+
+    fun postDishStatus(itemUpdate: OrderItemForUpdate): Completable
 }
