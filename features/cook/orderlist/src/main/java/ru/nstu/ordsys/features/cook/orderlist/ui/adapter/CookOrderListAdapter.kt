@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderListForCook
 import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.PostDishStatusUseCase
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookItemOrderListViewModel
+import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderItemRouter
 import ru.nstu.ordsys.features.cook.orderlist.ui.adapter.viewholder.CookOrderListView
 import ru.nstu.ordsys.features.cook.orderlist.ui.adapter.viewholder.CookOrderListViewHolder
 
 class CookOrderListAdapter(
-    val useCase: PostDishStatusUseCase
+    val useCase: PostDishStatusUseCase,
+    val router: CookOrderItemRouter
 ) : RecyclerView.Adapter<CookOrderListViewHolder>() {
 
     private var ordersAdapterDataList = emptyList<OrdersAdapterData>()
@@ -25,7 +27,7 @@ class CookOrderListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CookOrderListViewHolder =
-        CookOrderListViewHolder(CookOrderListView(parent, useCase))
+        CookOrderListViewHolder(CookOrderListView(parent, useCase, router))
 
     override fun onBindViewHolder(holder: CookOrderListViewHolder, position: Int) {
         holder.setViewModel(ordersAdapterDataList[position].viewModel)

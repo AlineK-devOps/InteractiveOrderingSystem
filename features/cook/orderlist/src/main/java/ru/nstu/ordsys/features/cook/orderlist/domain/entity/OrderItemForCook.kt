@@ -6,7 +6,7 @@ import java.sql.Timestamp
 data class OrderItemForCook(
     val id: Long,
     val dish: DishForCook,
-    val status: OrderItemStatus,
+    var status: OrderItemStatus,
     val orderTime: Timestamp,
-    val cook: String?
+    var cook: String?
 )

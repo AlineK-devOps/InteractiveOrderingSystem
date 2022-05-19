@@ -35,8 +35,11 @@
 	<string name="cold_workshop_button_text">Холодный цех</string>
 	<string name="bar_button_text">Бар</string>
 	<string name="cooking_status_format">Готовит %s</string>
+	<string name="ready_status">Приготовлено</string>
 	<string name="start_cook_button">Начать готовить</string>
 	<string name="end_cook_button">Завершить готовку</string>
+	<string name="back_button">Назад</string>
+	<string name="dish_technology_format">Технологическая карта: %s</string>
 
 	<string-array name="category_name">
 		<item>Роллы</item>

@@ -7,15 +7,19 @@ import ru.nstu.ordsys.component.ui.fragment.BaseView
 import ru.nstu.ordsys.component.ui.recyclerview.setDivider
 import ru.nstu.ordsys.features.cook.orderlist.R
 import ru.nstu.ordsys.features.cook.orderlist.databinding.CookOrderListItemBinding
+import ru.nstu.ordsys.features.cook.orderlist.domain.entity.DishForCook
 import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderListForCook
 import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.PostDishStatusUseCase
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookItemOrderListViewModel
+import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderItemRouter
 import ru.nstu.ordsys.features.cook.orderlist.ui.adapter.CookItemOrderAdapter
+import ru.nstu.ordsys.shared.dishes.domain.entity.Dish
 
 @SuppressLint("ViewConstructor")
 class CookOrderListView(
     parent: ViewGroup,
-    val useCase: PostDishStatusUseCase
+    val useCase: PostDishStatusUseCase,
+    val router: CookOrderItemRouter
 ) : BaseView(parent.context) {
 
     init {
@@ -33,7 +37,6 @@ class CookOrderListView(
         super.onAttachedToWindow()
 
         bindOrder(dishViewModel.itemOrder)
-        setObservers()
 
         if (dishesAdapter == null)
             bindAdapter()
@@ -42,7 +45,7 @@ class CookOrderListView(
     }
 
     private fun bindAdapter() {
-        dishesAdapter = CookItemOrderAdapter(useCase)
+        dishesAdapter = CookItemOrderAdapter(useCase, router)
         binding.dishesList.adapter = dishesAdapter
         binding.dishesList.layoutManager = LinearLayoutManager(context)
         binding.dishesList.setDivider(ru.nstu.ordsys.component.resources.R.drawable.thin_recycler_view_divider)
@@ -57,9 +60,5 @@ class CookOrderListView(
                 )
             }
         }
-    }
-
-    private fun setObservers() {
-        //dishViewModel.status.observe(this, ::handleStatus)
     }
 }

@@ -37,4 +37,6 @@
 	<dimen name="size_210">210dp</dimen>
 	<dimen name="size_250">250dp</dimen>
 	<dimen name="size_330">330dp</dimen>
+	<dimen name="size_660">660dp</dimen>
+	<dimen name="size_370">370dp</dimen>
 </resources>

@@ -8,6 +8,7 @@ import ru.nstu.ordsys.component.ui.animation.showWithFade
 import ru.nstu.ordsys.component.ui.fragment.BaseView
 import ru.nstu.ordsys.features.cook.orderlist.R
 import ru.nstu.ordsys.features.cook.orderlist.databinding.DishItemBinding
+import ru.nstu.ordsys.features.cook.orderlist.domain.entity.DishForCook
 import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderItemForCook
 import ru.nstu.ordsys.features.cook.orderlist.presentation.DishItemViewModel
 import ru.nstu.ordsys.order.domain.entity.OrderItemStatus
@@ -43,6 +44,11 @@ class DishItemView(
                 dishNameWeight.text = resources.getString(ru.nstu.ordsys.component.resources.R.string.dish_name_format, dish.name, dish.weight)
                 dishTimeCooking.base = SystemClock.elapsedRealtime() - (Date().time + 7 * 60 *60 * 1000 - orderTime.time)
                 dishTimeCooking.start()
+
+                dishNameWeight.setOnClickListener {
+                    if (!item.dish.recipe.isNullOrEmpty())
+                        dishViewModel.navigateToTechnologyScreen(item.dish)
+                }
             }
         }
     }
@@ -71,6 +77,7 @@ class DishItemView(
         when (status) {
             OrderItemStatus.IN_QUEUE_FOR_COOKING -> renderInQueueForCookingStatus()
             OrderItemStatus.IN_COOKING_PROCESS   -> renderInCookingProcessStatus()
+            OrderItemStatus.IN_QUEUE_FOR_SERVING -> renderInQueueForServingStatus()
             else                                 -> throw Exception("Wrong dish status")
         }
     }
@@ -93,6 +100,15 @@ class DishItemView(
                 cookingStatus.text = resources.getString(ru.nstu.ordsys.component.resources.R.string.cooking_status_format, dishViewModel.dish.cook)
                 cookingStatus.showWithFade()
             }
+        }
+    }
+
+    private fun renderInQueueForServingStatus() {
+        with(binding) {
+            endCookButton.hideWithFade()
+            startCookButton.hideWithFade()
+            cookingStatus.text = resources.getString(ru.nstu.ordsys.component.resources.R.string.ready_status)
+            cookingStatus.showWithFade()
         }
     }
 }

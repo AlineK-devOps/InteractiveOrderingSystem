@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/screen"
+    android:background="@color/light_gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/menu_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_90"
+        android:background="@color/white_gray"
+        android:elevation="@dimen/size_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/back_button"
+                android:textColor="@color/white_gray"
+                android:background="@color/orange"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
+
+            <View
+                android:id="@+id/separator2"
+                android:layout_width="@dimen/size_2"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toStartOf="@id/settings_button"/>
+
+            <Button
+                android:id="@+id/settings_button"
+                style="@style/Theme.InteractiveOrderingSystem.ToolbarImageButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_settings"
+                android:text="@string/settings_button_text"
+                android:drawableTint="@color/blue_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/user_name"/>
+
+            <TextView
+                android:id="@+id/user_name"
+                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/orange"
+                android:textColor="@color/white_gray"
+                android:text="@string/stub"
+                android:padding="@dimen/margin_15"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/dish_name"
+        style="@style/Theme.InteractiveOrderingSystem.MenuTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stub"
+        android:padding="@dimen/padding_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar"/>
+
+    <View
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_2"
+        android:background="@color/white_gray"
+        android:layout_marginEnd="@dimen/margin_15"
+        app:layout_constraintStart_toEndOf="@id/dish_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/dish_name"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_gray"
+        android:padding="@dimen/padding_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dish_name">
+
+        <ImageView
+            android:id="@+id/dish_image"
+            android:layout_width="@dimen/size_660"
+            android:layout_height="@dimen/size_370"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/dish_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dish_name_format"
+            android:layout_margin="@dimen/margin_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dish_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Theme.InteractiveOrderingSystem.MainTitleText"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

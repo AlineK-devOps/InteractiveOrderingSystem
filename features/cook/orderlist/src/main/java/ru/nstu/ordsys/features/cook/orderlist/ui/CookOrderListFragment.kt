@@ -14,6 +14,7 @@ import ru.nstu.ordsys.component.ui.fragment.BaseFragment
 import ru.nstu.ordsys.features.cook.orderlist.databinding.CookOrderListFragmentBinding
 import ru.nstu.ordsys.features.cook.orderlist.domain.entity.OrderListForCook
 import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.PostDishStatusUseCase
+import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderItemRouter
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderListViewModel
 import ru.nstu.ordsys.features.cook.orderlist.presentation.state.CookOrderListState
 import ru.nstu.ordsys.features.cook.orderlist.ui.adapter.CookOrderListAdapter
@@ -28,6 +29,8 @@ class CookOrderListFragment :
     }
 
     private val useCase: PostDishStatusUseCase by inject()
+    private val router: CookOrderItemRouter by inject()
+
     private val viewModel: CookOrderListViewModel by viewModel()
 
     private lateinit var ordersAdapter: CookOrderListAdapter
@@ -50,7 +53,7 @@ class CookOrderListFragment :
 
     private fun bindAdapters() {
         with(binding) {
-            ordersAdapter = CookOrderListAdapter(useCase)
+            ordersAdapter = CookOrderListAdapter(useCase, router)
             ordersList.adapter = ordersAdapter
 
             ordersList.layoutManager = GridLayoutManager(context, 2)

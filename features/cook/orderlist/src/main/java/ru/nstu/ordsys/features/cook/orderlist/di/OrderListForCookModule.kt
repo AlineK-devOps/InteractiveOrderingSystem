@@ -9,6 +9,7 @@ import ru.nstu.ordsys.features.cook.orderlist.data.repository.CookOrderListRepos
 import ru.nstu.ordsys.features.cook.orderlist.domain.repository.CookOrderListRepository
 import ru.nstu.ordsys.features.cook.orderlist.domain.usecase.*
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderListViewModel
+import ru.nstu.ordsys.features.cook.orderlist.presentation.details.DishTechnologyViewModel
 import ru.nstu.ordsys.mockapiserver.changer.ORIGINAL
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
 import ru.nstu.ordsys.mockapiserver.retrofit.createRetrofitService
@@ -32,6 +33,12 @@ val cookOrderListModule = module {
             getColdWorkshopOrdersUseCase = get(),
             getHotWorkshopOrdersUseCase = get(),
             getBarOrdersUseCase = get(),
+            router = get()
+        )
+    }
+
+    viewModel {
+        DishTechnologyViewModel(
             router = get()
         )
     }

@@ -2,9 +2,9 @@ package ru.nstu.ordsys.shared.user.entity
 
 object User {
 
-    private var id: Long = 7
+    private var id: Long = 8
 
-    private var name: String = "Артёмов В.А."
+    private var name: String = "Рудина С.В."
 
     fun getId() = id
 
