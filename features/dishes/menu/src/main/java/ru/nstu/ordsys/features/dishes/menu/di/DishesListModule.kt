@@ -13,6 +13,11 @@ import ru.nstu.ordsys.mockapiserver.changer.MOCK
 import ru.nstu.ordsys.mockapiserver.changer.ORIGINAL
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
 import ru.nstu.ordsys.mockapiserver.retrofit.createRetrofitService
+import ru.nstu.ordsys.waiter.data.datasource.WaiterCallDataSource
+import ru.nstu.ordsys.waiter.data.datasource.WaiterCallDataSourceImpl
+import ru.nstu.ordsys.waiter.data.repository.WaiterCallRepositoryImpl
+import ru.nstu.ordsys.waiter.domain.repository.WaiterCallRepository
+import ru.nstu.ordsys.waiter.domain.usecase.PostWaiterCallingUseCase
 
 val dishesListModule = module {
     factory { createRetrofitService<DishesListApi>(getRetrofit(ORIGINAL)) }
@@ -29,6 +34,7 @@ val dishesListModule = module {
     factory { GetSoupsMenuUseCase(get()) }
     factory { GetSushiMenuUseCase(get()) }
     factory { GetWokMenuUseCase(get()) }
+    factory { PostWaiterCallingUseCase(get()) }
 
     viewModel {
         DishesListViewModel(
@@ -40,6 +46,7 @@ val dishesListModule = module {
             getSoupsMenuUseCase = get(),
             getSushiMenuUseCase = get(),
             getWokMenuUseCase = get(),
+            postWaiterCallingUseCase = get(),
             router = get()
         )
     }

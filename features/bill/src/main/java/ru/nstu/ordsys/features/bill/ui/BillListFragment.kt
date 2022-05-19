@@ -180,7 +180,10 @@ class BillListFragment :
 
     override fun onDialogCloseResult(requestCode: Int) {
         when (requestCode) {
-            BillListRequestCode.CALL_WAITER_REQUEST_CODE.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            BillListRequestCode.CALL_WAITER_REQUEST_CODE.code -> {
+                viewModel.callWaiter()
+                showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            }
         }
     }
 }

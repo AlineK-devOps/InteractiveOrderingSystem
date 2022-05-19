@@ -207,7 +207,10 @@ class OrderListFragment :
 
     override fun onDialogCloseResult(requestCode: Int) {
         when (requestCode) {
-            OrderListRequestCode.CALL_WAITER_REQUEST_CODE.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            OrderListRequestCode.CALL_WAITER_REQUEST_CODE.code -> {
+                viewModel.callWaiter()
+                showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            }
             OrderListRequestCode.CLEAR_CART_REQUEST_CODE.code -> viewModel.clearCart()
             OrderListRequestCode.SEND_ORDER_REQUEST_CODE.code -> viewModel.sendOrder()
         }

@@ -24,6 +24,6 @@ class WaiterOrderListDataSourceImpl(private val api: WaiterOrderListApi) :
     override fun deleteOrder(tableId: Long): Completable =
         api.deleteOrder(tableId)
 
-    override fun doneOrder(orderId: Long): Completable =
-        api.doneOrder(orderId)
+    override fun doneOrder(tableId: Long): Completable =
+        api.doneOrder(tableId)
 }

@@ -13,6 +13,7 @@ import ru.nstu.ordsys.features.cook.orderlist.di.cookOrderListModule
 import ru.nstu.ordsys.features.dishes.menu.di.dishesListModule
 import ru.nstu.ordsys.features.waiter.orderlist.di.waiterOrderListModule
 import ru.nstu.ordsys.order.di.orderListModule
+import ru.nstu.ordsys.waiter.di.waiterCallingModule
 
 class App : Application() {
 
@@ -30,7 +31,8 @@ class App : Application() {
                 orderListModule,
                 billListModule,
                 cookOrderListModule,
-                waiterOrderListModule
+                waiterOrderListModule,
+                waiterCallingModule,
             )
         }
     }

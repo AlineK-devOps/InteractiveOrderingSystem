@@ -6,6 +6,6 @@ import retrofit2.http.Path
 
 interface WaiterCallApi {
 
-    @POST("/api/waiter_call/{id}")
-    fun postWaiterCalling(@Path("id") tableId: Long): Completable
+    @POST("/api/waiter_call/{tableId}")
+    fun postWaiterCalling(@Path("tableId") tableId: Long): Completable
 }

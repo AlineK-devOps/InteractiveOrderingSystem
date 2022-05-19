@@ -4,7 +4,7 @@ object User {
 
     private var id: Long = 8
 
-    private var name: String = "Рудина С.В."
+    private var name: String = "Столик №1"
 
     fun getId() = id
 

@@ -5,6 +5,6 @@ import ru.nstu.ordsys.features.waiter.orderlist.domain.repository.WaiterOrderLis
 
 class DoneOrderUseCase(private val repository: WaiterOrderListRepository) {
 
-    operator fun invoke(orderId: Long): Completable =
-        repository.doneOrder(orderId)
+    operator fun invoke(tableId: Long): Completable =
+        repository.doneOrder(tableId)
 }

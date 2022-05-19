@@ -13,16 +13,23 @@ import ru.nstu.ordsys.order.data.repository.OrderListRepositoryImpl
 import ru.nstu.ordsys.order.domain.repository.OrderListRepository
 import ru.nstu.ordsys.order.domain.usecase.PostOrderListUseCase
 import ru.nstu.ordsys.order.presentation.OrderListViewModel
+import ru.nstu.ordsys.waiter.data.datasource.WaiterCallDataSource
+import ru.nstu.ordsys.waiter.data.datasource.WaiterCallDataSourceImpl
+import ru.nstu.ordsys.waiter.data.repository.WaiterCallRepositoryImpl
+import ru.nstu.ordsys.waiter.domain.repository.WaiterCallRepository
+import ru.nstu.ordsys.waiter.domain.usecase.PostWaiterCallingUseCase
 
 val orderListModule = module {
     factory { createRetrofitService<OrderListApi>(getRetrofit(ORIGINAL)) }
     factory<OrderListDataSource> { OrderListDataSourceImpl(get()) }
     factory<OrderListRepository> { OrderListRepositoryImpl(get()) }
     factory { PostOrderListUseCase(get()) }
+    factory { PostWaiterCallingUseCase(get()) }
 
     viewModel {
         OrderListViewModel(
             useCase = get(),
+            postWaiterCallingUseCase = get(),
             router = get()
         )
     }

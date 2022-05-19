@@ -12,6 +12,11 @@ import ru.nstu.ordsys.features.bill.presentation.BillListViewModel
 import ru.nstu.ordsys.mockapiserver.changer.MOCK
 import ru.nstu.ordsys.mockapiserver.changer.getRetrofit
 import ru.nstu.ordsys.mockapiserver.retrofit.createRetrofitService
+import ru.nstu.ordsys.waiter.data.datasource.WaiterCallDataSource
+import ru.nstu.ordsys.waiter.data.datasource.WaiterCallDataSourceImpl
+import ru.nstu.ordsys.waiter.data.repository.WaiterCallRepositoryImpl
+import ru.nstu.ordsys.waiter.domain.repository.WaiterCallRepository
+import ru.nstu.ordsys.waiter.domain.usecase.PostWaiterCallingUseCase
 
 val billListModule = module {
     factory { createRetrofitService<BillListApi>(getRetrofit(MOCK)) }
@@ -21,10 +26,12 @@ val billListModule = module {
     factory<BillListRepository> { BillListRepositoryImpl(get()) }
 
     factory { GetBillListUseCase(get()) }
+    factory { PostWaiterCallingUseCase(get()) }
 
     viewModel {
         BillListViewModel(
             useCase = get(),
+            postWaiterCallingUseCase = get(),
             router = get()
         )
     }

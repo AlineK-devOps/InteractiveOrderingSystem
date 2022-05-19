@@ -17,8 +17,8 @@ interface WaiterOrderListApi {
     @POST("/api/waiter/calling/{tableId}")
     fun doneWaiterCalling(@Path("tableId") tableId: Long): Completable
 
-    @POST("/api/waiter/done_order/{orderId}")
-    fun doneOrder(@Path("orderId") orderId: Long): Completable
+    @POST("/api/waiter/done_order/{tableId}")
+    fun doneOrder(@Path("tableId") tableId: Long): Completable
 
     @DELETE("/api/waiter/delete/dish/{positionId}")
     fun  deleteDish(@Path("positionId") positionId: Long): Completable

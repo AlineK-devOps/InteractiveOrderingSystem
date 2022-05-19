@@ -182,7 +182,10 @@ class DishesListFragment(val position: Int) :
 
     override fun onDialogCloseResult(requestCode: Int) {
         when (requestCode) {
-            DishesListRequestCode.CALL_WAITER_REQUEST_CODE.code -> showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            DishesListRequestCode.CALL_WAITER_REQUEST_CODE.code -> {
+                viewModel.callWaiter()
+                showToast(ru.nstu.ordsys.component.resources.R.string.waiting_the_waiter)
+            }
         }
     }
 }

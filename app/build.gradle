@@ -34,4 +34,5 @@ dependencies {
     implementation project(':features:waiter:orderlist')
 
     implementation project(':shared:dishes')
+    implementation project(':shared:waiter')
 }

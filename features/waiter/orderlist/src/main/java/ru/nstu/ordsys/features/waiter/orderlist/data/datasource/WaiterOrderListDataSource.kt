@@ -17,5 +17,5 @@ interface WaiterOrderListDataSource {
 
     fun deleteOrder(tableId: Long): Completable
 
-    fun doneOrder(orderId: Long): Completable
+    fun doneOrder(tableId: Long): Completable
 }

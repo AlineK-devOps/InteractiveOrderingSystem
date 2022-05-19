@@ -23,6 +23,8 @@ dependencies {
     implementation project(':shared:dishes')
     implementation project(':shared:order')
     implementation project(':shared:operation')
+    implementation project(':shared:waiter')
+    implementation project(':shared:user')
     implementation project(':component:resources')
     implementation project(':component:ui')
     implementation project(':mockapiserver')
