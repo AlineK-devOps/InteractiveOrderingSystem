@@ -6,6 +6,7 @@ import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderItemRouter
 import ru.nstu.ordsys.features.cook.orderlist.presentation.CookOrderListRouter
 import ru.nstu.ordsys.features.cook.orderlist.presentation.details.DishTechnologyRouter
 import ru.nstu.ordsys.features.dishes.menu.presentation.DishesListRouter
+import ru.nstu.ordsys.features.waiter.orderlist.presentation.WaiterOrderListRouter
 import ru.nstu.ordsys.navigation.router.*
 import ru.nstu.ordsys.order.presentation.OrderListRouter
 
@@ -16,4 +17,5 @@ val routersModule = module {
     factory<CookOrderListRouter> { CookOrderListRouterImpl(router = get()) }
     factory<CookOrderItemRouter> { CookOrderItemRouterImpl(router = get()) }
     factory<DishTechnologyRouter> { DishTechnologyRouterImpl(router = get()) }
+    factory<WaiterOrderListRouter> { WaiterOrderListRouterImpl(router = get()) }
 }

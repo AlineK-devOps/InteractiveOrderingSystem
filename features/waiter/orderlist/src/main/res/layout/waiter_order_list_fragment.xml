@@ -20,58 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/all_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/all_button_text"
-                android:textColor="@color/white_gray"
-                android:background="@color/blue_gray"
-                android:padding="@dimen/padding_20"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/hot_workshop_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/hot_workshop_button_text"
-                android:textColor="@color/white_gray"
-                android:background="@color/blue_gray"
-                android:padding="@dimen/padding_20"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/all_button"
-                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/cold_workshop_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/cold_workshop_button_text"
-                android:textColor="@color/white_gray"
-                android:background="@color/blue_gray"
-                android:padding="@dimen/padding_20"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/hot_workshop_button"
-                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bar_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/bar_button_text"
-                android:textColor="@color/white_gray"
-                android:background="@color/blue_gray"
-                android:padding="@dimen/padding_20"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cold_workshop_button"
-                style="@style/Theme.InteractiveOrderingSystem.BoldNumberText" />
-
             <View
                 android:id="@+id/separator1"
                 android:layout_width="@dimen/size_2"

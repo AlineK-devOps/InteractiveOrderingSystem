@@ -31,6 +31,7 @@ dependencies {
     implementation project(':features:order')
     implementation project(':features:bill')
     implementation project(':features:cook:orderlist')
+    implementation project(':features:waiter:orderlist')
 
     implementation project(':shared:dishes')
 }
